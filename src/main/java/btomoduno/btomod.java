@@ -144,11 +144,20 @@ public class btomod {
     	
     	//mibloque
 
-    	ItemStack btofood = new ItemStack(items.ModItems.btofood);
-    	ItemStack btoitem = new ItemStack(items.ModItems.btoitem);	
-    	GameRegistry.addRecipe(new ItemStack(blocks.ModBlocks.btoblock), "xxx", "xyx", "xxx",
-    	        'x', btofood, 'y', btoitem);
+    	//ItemStack btofood = new ItemStack(items.ModItems.btofood);
+    	//ItemStack btoitem = new ItemStack(items.ModItems.btoitem);	
+    	//GameRegistry.addRecipe(new ItemStack(blocks.ModBlocks.btoblock), "xxx", "xyx", "xxx",
+    	       // 'x', btofood, 'y', btoitem);
     	
+    	
+    	//micomida
+
+    	ItemStack yerba2 = new ItemStack(Items.wheat_seeds);
+    	ItemStack manzana = new ItemStack(Items.apple);	
+    	ItemStack azucar2 = new ItemStack(Items.sugar);
+    	ItemStack leche2 = new ItemStack(Items.milk_bucket);
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.btofood,9), "xxx", "zyz", "xox",
+    	        'x', yerba2, 'y', manzana, 'z', azucar2, 'o', leche2);
     	
     	
     	 
