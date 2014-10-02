@@ -1,0 +1,16 @@
+[
+{
+  "modid": "btomoduno",
+  "name": "bTo Recipes+Blocks",
+  "description": "More recipes.",
+  "version": "1.0.0",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["bTo2014"],
+  "credits": "bTo, Forge y Rita la Cantaora.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
