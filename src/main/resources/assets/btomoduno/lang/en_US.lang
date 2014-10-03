@@ -1,7 +1,5 @@
 tile.btomoduno_btoblock.name=bTo Block
-
 tile.btomoduno_smasher.name=Sun Light
-
-item.btomoduno_btoitem.name=bTo Item
-
-item.btomoduno_btofood.name=bTo Food
+item.btomoduno_trozocuero.name=Damaged leather
+item.btomoduno_harina.name=Flour
+item.btomoduno_btofood.name=Apple Cake

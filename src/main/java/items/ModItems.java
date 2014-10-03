@@ -4,12 +4,14 @@ import net.minecraft.item.Item;
 
 public final class ModItems {
 
-	public static Item btoitem;
+	public static Item trozocuero;
 	public static Item btofood;
+	public static Item harina;
 	
 	public static void init() {
 		
-		btoitem = new Itembto();
+		trozocuero = new trozocuero();
+		harina = new harina();
 		btofood = new Itembtofood(4, 0.3f, false);
 	}
 }

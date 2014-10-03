@@ -150,17 +150,29 @@ public class btomod {
     	       // 'x', btofood, 'y', btoitem);
     	
     	
+    	//cuerozombi
+    	
+    	ItemStack cuerozombi = new ItemStack(items.ModItems.trozocuero);
+        GameRegistry.addSmelting(Items.rotten_flesh, new ItemStack(items.ModItems.trozocuero,3), 0.1f);
+    	GameRegistry.addRecipe(new ItemStack(Items.leather, 3), "xxx", "xxx", "xxx",
+	      'x', cuerozombi);
+    	
+    	//harina
+    	
+    	GameRegistry.addSmelting(Items.wheat, new ItemStack(items.ModItems.harina,1), 0.1f);
+    	
+    	
     	//micomida
 
     	ItemStack yerba2 = new ItemStack(Items.wheat_seeds);
     	ItemStack manzana = new ItemStack(Items.apple);	
-    	ItemStack azucar2 = new ItemStack(Items.sugar);
+    	ItemStack harina = new ItemStack(items.ModItems.harina);
     	ItemStack leche2 = new ItemStack(Items.milk_bucket);
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.btofood,9), "xxx", "zyz", "xox",
-    	        'x', yerba2, 'y', manzana, 'z', azucar2, 'o', leche2);
+    	        'x', yerba2, 'y', manzana, 'z', harina, 'o', leche2);
     	
     	
-    	 
+    	
     }
  
     @Mod.EventHandler
