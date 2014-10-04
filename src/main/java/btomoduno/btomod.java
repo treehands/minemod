@@ -1,35 +1,55 @@
 package btomoduno;
 import lib.Constants;
 import items.ModItems;
+import items.entidadgranada;
+import items.granada;
 import blocks.ModBlocks;
 import blocks.TileBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
  
+
 @Mod(modid = "btomoduno", name = "bTo Recipes+Blocks", version = "1.0.0")
+
 public class btomod {
+	public static Item granada;
  
     @Mod.EventHandler
+  
     public void preInit(FMLPreInitializationEvent event) {
     	
     	 ModBlocks.init();
     	 ModItems.init();
     	 TileBlocks.init();
     	 proxy.registerTileEntities();
- 
+    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 8);
+    	 granada = new granada();
+    	 
     }
-    @SidedProxy(clientSide = Constants.CLIENT_PROXY_CLASS, serverSide = Constants.SERVER_PROXY_CLASS)
-    public static CommonProxy proxy;
+   
+@SidedProxy(clientSide = Constants.CLIENT_PROXY_CLASS, serverSide = Constants.SERVER_PROXY_CLASS)
+public static CommonProxy proxy;
+ 
     
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+    	
+    	GameRegistry.registerItem(granada, granada.getUnlocalizedName());
+    	EntityRegistry.registerModEntity(entidadgranada.class, "Granada", 4, this, 80, 3, true);
+
+    	proxy.registerRenderThings();
+    	proxy.registerSounds();
+    	
     
     	
     	//saddle
@@ -40,115 +60,7 @@ public class btomod {
     	GameRegistry.addRecipe(new ItemStack(Items.saddle), "xxx", "x x", "y y",
     	        'x', cueros, 'y', hierro);
     	
-    	//disco11
-    	
-    	ItemStack obsidiana = new ItemStack(Blocks.obsidian);
-    	ItemStack negro = new ItemStack(Items.dye,0,0);
-
-    	GameRegistry.addRecipe(new ItemStack(Items.record_11), " x ", "xyx", " x ",
-    	        'x', obsidiana, 'y', negro);
-    	
-    	//disco13
-    	ItemStack amarillo = new ItemStack(Items.glowstone_dust);
-
-    	GameRegistry.addRecipe(new ItemStack(Items.record_13), " x ", "xyx", " x ",
-    	        'x', obsidiana, 'y', amarillo);
-    	
-    	//discocat
-    	ItemStack verde1 = new ItemStack(Items.dye,0,2);
-
-    	GameRegistry.addRecipe(new ItemStack(Items.record_cat), " x ", "xyx", " x ",
-    	        'x', obsidiana, 'y', verde1);
-    	
-    	//discoblocks
-    	ItemStack rosa1 = new ItemStack(Items.dye,0,9);
-
-    	GameRegistry.addRecipe(new ItemStack(Items.record_blocks), " x ", "xyx", " x ",
-    	        'x', obsidiana, 'y', rosa1);
-    	
-    	//discochirp
-    	ItemStack rojo = new ItemStack(Items.dye,0,1);
-
-    	GameRegistry.addRecipe(new ItemStack(Items.record_chirp), " x ", "xyx", " x ",
-    	        'x', obsidiana, 'y', rojo);
-    	
-    	//discofar
-    	ItemStack verde2 = new ItemStack(Items.dye,0,10);
-
-    	GameRegistry.addRecipe(new ItemStack(Items.record_far), " x ", "xyx", " x ",
-    	        'x', obsidiana, 'y', verde2);
-    	
-    	//discomall
-    	ItemStack morado = new ItemStack(Items.dye,0,5);
-
-    	GameRegistry.addRecipe(new ItemStack(Items.record_mall), " x ", "xyx", " x ",
-    	        'x', obsidiana, 'y', morado);
-    	
-    	
-    	//discomellohi
-    	ItemStack rosa2 = new ItemStack(Items.dye,0,13);
-
-    	GameRegistry.addRecipe(new ItemStack(Items.record_mellohi), " x ", "xyx", " x ",
-    	        'x', obsidiana, 'y', rosa2);
-    	
-    	
-    	//discostal
-    	ItemStack gris = new ItemStack(Items.dye,0,8);
-
-    	GameRegistry.addRecipe(new ItemStack(Items.record_stal), " x ", "xyx", " x ",
-    	        'x', obsidiana, 'y', gris);
-    	
-    	
-    	
-    	//discosttrad
-    	ItemStack blanco = new ItemStack(Items.dye,0,15);
-
-    	GameRegistry.addRecipe(new ItemStack(Items.record_strad), " x ", "xyx", " x ",
-    	        'x', obsidiana, 'y', blanco);
-    	
-    	
-    	
-    	//discoward
-    	ItemStack cian = new ItemStack(Items.dye,0,6);
-
-    	GameRegistry.addRecipe(new ItemStack(Items.record_ward), " x ", "xyx", " x ",
-    	        'x', obsidiana, 'y', cian);
-    	
-    	
-    	//discowait
-    	ItemStack azul = new ItemStack(Items.dye,0,12);
-
-    	GameRegistry.addRecipe(new ItemStack(Items.record_wait), " x ", "xyx", " x ",
-    	        'x', obsidiana, 'y', azul);
-    	
-
-
-
-    	//slime ball
-    	
-    	ItemStack azucar = new ItemStack(Items.sugar);
-    	ItemStack cactus = new ItemStack(Blocks.cactus);
-    	ItemStack leche = new ItemStack(Items.milk_bucket);
-
-    	GameRegistry.addRecipe(new ItemStack(Items.slime_ball), "yyy", "yxy", "yzy",
-    	        'x', azucar, 'y', cactus,'z', leche);
-    	
-    	
-    	//yerba
-    	ItemStack tierra = new ItemStack(Blocks.dirt);
-    	ItemStack yerba = new ItemStack(Items.wheat_seeds);
-
-    	GameRegistry.addRecipe(new ItemStack(Blocks.grass), "xxx", "yyy", "yyy",
-    	        'x', yerba, 'y', tierra);
-    	
-    	
-    	//mibloque
-
-    	//ItemStack btofood = new ItemStack(items.ModItems.btofood);
-    	//ItemStack btoitem = new ItemStack(items.ModItems.btoitem);	
-    	//GameRegistry.addRecipe(new ItemStack(blocks.ModBlocks.btoblock), "xxx", "xyx", "xxx",
-    	       // 'x', btofood, 'y', btoitem);
-    	
+    	   	
     	
     	//cuerozombi
     	
@@ -164,12 +76,27 @@ public class btomod {
     	
     	//micomida
 
-    	ItemStack yerba2 = new ItemStack(Items.wheat_seeds);
+    	ItemStack semilla = new ItemStack(items.ModItems.semilla);
     	ItemStack manzana = new ItemStack(Items.apple);	
     	ItemStack harina = new ItemStack(items.ModItems.harina);
     	ItemStack leche2 = new ItemStack(Items.milk_bucket);
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.btofood,9), "xxx", "zyz", "xox",
-    	        'x', yerba2, 'y', manzana, 'z', harina, 'o', leche2);
+    	        'x', semilla, 'y', manzana, 'z', harina, 'o', leche2);
+    	
+    	
+    	//tirachinas
+    	
+    	ItemStack palo = new ItemStack(Items.stick);
+    	ItemStack cuerda = new ItemStack(Items.string);	
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.tirachinas), "xyx", " x ", " x ",
+    	        'x', palo, 'y', cuerda);
+    	
+    	//tiramobs
+    	
+    	ItemStack palo2 = new ItemStack(Items.stick);
+    	ItemStack diamante = new ItemStack(Items.diamond);	
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.tiramobs), "xyx", " x ", " x ",
+    	        'x', palo2, 'y', diamante);
     	
     	
     	
