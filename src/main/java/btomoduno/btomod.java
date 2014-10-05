@@ -1,10 +1,7 @@
 package btomoduno;
 import lib.Constants;
 import items.ModItems;
-import items.entidadgranada;
-import items.granada;
-import blocks.ModBlocks;
-import blocks.TileBlocks;
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -19,21 +16,17 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
  
 
-@Mod(modid = "btomoduno", name = "bTo Recipes+Blocks", version = "1.0.0")
+@Mod(modid = "btomoduno", name = "bTo Chili Hunter", version = "1.0.0")
 
 public class btomod {
-	public static Item granada;
  
     @Mod.EventHandler
   
     public void preInit(FMLPreInitializationEvent event) {
     	
-    	 ModBlocks.init();
     	 ModItems.init();
-    	 TileBlocks.init();
-    	 proxy.registerTileEntities();
-    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 8);
-    	 granada = new granada();
+    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 6);
+    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.guindilla), 6);
     	 
     }
    
@@ -44,9 +37,6 @@ public static CommonProxy proxy;
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
     	
-    	GameRegistry.registerItem(granada, granada.getUnlocalizedName());
-    	EntityRegistry.registerModEntity(entidadgranada.class, "Granada", 4, this, 80, 3, true);
-
     	proxy.registerRenderThings();
     	proxy.registerSounds();
     	
@@ -71,32 +61,26 @@ public static CommonProxy proxy;
     	
     	//harina
     	
-    	GameRegistry.addSmelting(Items.wheat, new ItemStack(items.ModItems.harina,1), 0.1f);
+    	GameRegistry.addSmelting(items.ModItems.semilla, new ItemStack(items.ModItems.harina,1), 0.1f);
     	
     	
     	//micomida
 
-    	ItemStack semilla = new ItemStack(items.ModItems.semilla);
-    	ItemStack manzana = new ItemStack(Items.apple);	
+    	ItemStack guindilla = new ItemStack(items.ModItems.guindilla);	
     	ItemStack harina = new ItemStack(items.ModItems.harina);
-    	ItemStack leche2 = new ItemStack(Items.milk_bucket);
-    	GameRegistry.addRecipe(new ItemStack(items.ModItems.btofood,9), "xxx", "zyz", "xox",
-    	        'x', semilla, 'y', manzana, 'z', harina, 'o', leche2);
+    	ItemStack agua = new ItemStack(Items.water_bucket);
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.btofood,9), "xxx", "yyy", " z ",
+    	        'x', guindilla, 'y', harina, 'z', agua);
     	
     	
-    	//tirachinas
+  	
+    		
+    	//superguindilla
     	
-    	ItemStack palo = new ItemStack(Items.stick);
-    	ItemStack cuerda = new ItemStack(Items.string);	
-    	GameRegistry.addRecipe(new ItemStack(items.ModItems.tirachinas), "xyx", " x ", " x ",
-    	        'x', palo, 'y', cuerda);
-    	
-    	//tiramobs
-    	
-    	ItemStack palo2 = new ItemStack(Items.stick);
-    	ItemStack diamante = new ItemStack(Items.diamond);	
-    	GameRegistry.addRecipe(new ItemStack(items.ModItems.tiramobs), "xyx", " x ", " x ",
-    	        'x', palo2, 'y', diamante);
+    	ItemStack guindilla2 = new ItemStack(items.ModItems.guindilla);
+    	ItemStack diamanteg = new ItemStack(Items.diamond);
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.superguindilla), "xxx", "xyx", "xxx",
+    	        'x', guindilla2, 'y', diamanteg);
     	
     	
     	
@@ -107,3 +91,5 @@ public static CommonProxy proxy;
  
     }
 }
+
+

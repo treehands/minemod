@@ -1,4 +1,7 @@
 {
    "tirachinas": {"category": "master","sounds": [{"name": "tirachinas","stream": false}]},
+   "blop": {"category": "master","sounds": [{"name": "blop","stream": false}]},
+   "guindilla": {"category": "master","sounds": [{"name": "guindilla","stream": false}]},
+   "superguindilla": {"category": "master","sounds": [{"name": "superguindilla","stream": false}]},
    "tiramobs": {"category": "master","sounds": [{"name": "tiramobs","stream": false}]}
    }

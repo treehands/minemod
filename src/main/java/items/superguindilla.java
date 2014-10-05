@@ -15,38 +15,42 @@ import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
  
-public class tiramobs extends Item {
-private String name = "tiramobs";
-public tiramobs() {
+public class superguindilla extends Item {
+private String name = "superguindilla";
+public superguindilla() {
 setUnlocalizedName(Constants.MODID + "_" + name);
 GameRegistry.registerItem(this, name);
 setTextureName(Constants.MODID + ":" + name);
+setMaxDamage(100);
 setCreativeTab(CreativeTabs.tabCombat);
 }
 
 public boolean func_111207_a(ItemStack itemstack, EntityPlayer player, EntityLivingBase target){
 if(!target.worldObj.isRemote){
-if(target instanceof EntityMob){
+if(target instanceof EntityAnimal){
 {
 double calculatedX = -1 * (double) (-MathHelper.sin(target.rotationYaw/ 180.0F * (float) Math.PI)* MathHelper.cos(target.rotationPitch / 180.0F* (float) Math.PI) * 0.4f);
 double calculatedZ = 1 * (double) (MathHelper.cos(target.rotationYaw / 180.0F * (float) Math.PI)* MathHelper.cos(target.rotationPitch / 180.0F* (float) Math.PI) * 0.4f);
-double calculatedY = 16 * (double) (-MathHelper.sin((target.rotationPitch)/ 180.0F * (float) Math.PI) * 0.4f);
+double calculatedY = 20 * (double) (-MathHelper.sin((target.rotationPitch)/ 180.0F * (float) Math.PI) * 0.4f);
 
 target.motionX = calculatedX;
 target.motionY = calculatedY;
 target.motionZ = calculatedZ;
-
+itemstack.damageItem(1, player);
 {player.worldObj.playSoundAtEntity(player, Constants.MODID + ":" + name, 0.4f, 1);}
 }
 }else{
-Minecraft.getMinecraft().thePlayer.sendChatMessage("Only for Braaaiinss!");
+{player.worldObj.playSoundAtEntity(player, Constants.MODID + ":" + "blop", 0.4f, 1);}
+
+player.addChatMessage(new ChatComponentText("No Lamb,No Go!"));
 }
 }
 return false;
 }
-
+public boolean hasEffect(ItemStack itemStack, int pass){return true;}
 }

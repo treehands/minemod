@@ -15,13 +15,14 @@ import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
  
-public class tirachinas extends Item {
-private String name = "tirachinas";
-public tirachinas() {
+public class guindilla extends Item {
+private String name = "guindilla";
+public guindilla() {
 setUnlocalizedName(Constants.MODID + "_" + name);
 GameRegistry.registerItem(this, name);
 setTextureName(Constants.MODID + ":" + name);
@@ -34,16 +35,18 @@ if(target instanceof EntityAnimal){
 {
 double calculatedX = -1 * (double) (-MathHelper.sin(target.rotationYaw/ 180.0F * (float) Math.PI)* MathHelper.cos(target.rotationPitch / 180.0F* (float) Math.PI) * 0.4f);
 double calculatedZ = 1 * (double) (MathHelper.cos(target.rotationYaw / 180.0F * (float) Math.PI)* MathHelper.cos(target.rotationPitch / 180.0F* (float) Math.PI) * 0.4f);
-double calculatedY = 20 * (double) (-MathHelper.sin((target.rotationPitch)/ 180.0F * (float) Math.PI) * 0.4f);
+double calculatedY = 15 * (double) (-MathHelper.sin((target.rotationPitch)/ 180.0F * (float) Math.PI) * 0.4f);
 
 target.motionX = calculatedX;
 target.motionY = calculatedY;
 target.motionZ = calculatedZ;
 
 {player.worldObj.playSoundAtEntity(player, Constants.MODID + ":" + name, 0.4f, 1);}
+{--itemstack.stackSize;}
+
 }
 }else{
-Minecraft.getMinecraft().thePlayer.sendChatMessage("No Lamb,No Go!");
+player.addChatMessage(new ChatComponentText("No Lamb,No Go!"));
 }
 }
 return false;

@@ -27,10 +27,5 @@ if (!par2World.isRemote)
 } return par1ItemStack;
 }
 
-public boolean hasEffect(ItemStack par1ItemStack, int pass)
-{
-return true;
-}
-
 
 }
