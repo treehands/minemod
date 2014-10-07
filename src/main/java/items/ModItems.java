@@ -16,8 +16,10 @@ public final class ModItems {
 	public static Item lingote;
 	public static Item polvozafiro;
 	public static Item huevizador;
+	public static Item mochila;
 	public static void init() {
 		
+		mochila = new mochila();
 		huevizador = new huevizador();
 		trozocuero = new trozocuero();
 		lingote = new lingote();

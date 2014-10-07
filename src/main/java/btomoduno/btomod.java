@@ -35,7 +35,7 @@ public class btomod {
     
     
     public void preInit(FMLPreInitializationEvent event) {
-    	
+     GameRegistry.registerWorldGenerator(new WorldGeneratorbto(), 1);
    	 GameRegistry.registerBlock(blockBlueberry, "blueberries");
    	 GameRegistry.registerItem(blueberry, "blueberry");
    	 GameRegistry.registerBlock(blockFresa, "fresal");
