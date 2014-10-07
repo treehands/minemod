@@ -97,7 +97,7 @@ public static CommonProxy proxy;
     	//abono
 
     	ItemStack harina2 = new ItemStack(items.ModItems.harina);
-    	GameRegistry.addRecipe(new ItemStack(Items.dye,0,15), "xxx", " x ", "xxx",
+    	GameRegistry.addRecipe(new ItemStack(Items.dye,3,15), "xxx", " x ", "xxx",
     	        'x', harina2);
     	
     	
