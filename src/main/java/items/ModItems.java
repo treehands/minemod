@@ -10,6 +10,8 @@ public final class ModItems {
 	public static Item semilla;
 	public static Item guindilla;
 	public static Item superguindilla;
+	public static Item chuleta;
+	public static Item chuletaasada;
 	public static void init() {
 		
 		trozocuero = new trozocuero();
@@ -18,5 +20,7 @@ public final class ModItems {
 		guindilla = new guindilla();
 		superguindilla = new superguindilla();
 		btofood = new btofood(4, 0.3f, false);
+		chuleta = new chuleta(6, 0.3f, true);
+		chuletaasada = new chuletaasada(8, 0.3f, true);
 	}
 }

@@ -57,7 +57,7 @@ public static CommonProxy proxy;
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
     	
-    	
+    	MinecraftForge.EVENT_BUS.register(new customdrops());
     	proxy.registerRenderThings();
     	proxy.registerSounds();
     	
@@ -108,6 +108,12 @@ public static CommonProxy proxy;
     	ItemStack diamanteg = new ItemStack(Items.diamond);
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.superguindilla), "xxx", "xyx", "xxx",
     	        'x', guindilla2, 'y', diamanteg);
+    	
+    	
+    	
+    	//chuleta asada
+    	
+    	GameRegistry.addSmelting(items.ModItems.chuleta, new ItemStack(items.ModItems.chuletaasada,1), 0.1f);
     	
     	
     	
