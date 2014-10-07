@@ -1,4 +1,5 @@
 package btomoduno;
+import blocks.ModBlocks;
 import lib.Constants;
 import items.ModItems;
 import plants.BlockBlueberry;
@@ -41,6 +42,7 @@ public class btomod {
    	 GameRegistry.registerItem(fresa, "fresa");
    	 MinecraftForge.addGrassSeed(new ItemStack(blueberry), 2);
    	 MinecraftForge.addGrassSeed(new ItemStack(fresa), 2);
+   	 ModBlocks.init();
    	 ModItems.init();
    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 6);
    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.guindilla), 6);
@@ -56,7 +58,6 @@ public static CommonProxy proxy;
    
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-    	
     	MinecraftForge.EVENT_BUS.register(new customdrops());
     	proxy.registerRenderThings();
     	proxy.registerSounds();
@@ -116,7 +117,52 @@ public static CommonProxy proxy;
     	GameRegistry.addSmelting(items.ModItems.chuleta, new ItemStack(items.ModItems.chuletaasada,1), 0.1f);
     	
     	
+    	//semillas de guindillas
+    	GameRegistry.addShapelessRecipe(new ItemStack(items.ModItems.semilla, 3), new Object[] {items.ModItems.guindilla});
     	
+    	//polvozafiro
+    	
+    	GameRegistry.addShapelessRecipe(new ItemStack(items.ModItems.polvozafiro, 2), new Object[] {items.ModItems.zafiro});
+
+    	//lingote
+    	
+    	GameRegistry.addSmelting(items.ModItems.polvozafiro, new ItemStack(items.ModItems.lingote,1), 0.1f);
+    	
+    	//huevizador
+    	
+    	ItemStack lingote = new ItemStack(items.ModItems.lingote);
+        GameRegistry.addRecipe(new ItemStack(items.ModItems.huevizador), " x ", "x x", "xxx",
+	      'x', lingote);
+        
+    	//huevos
+    	
+    	ItemStack huevizador = new ItemStack(items.ModItems.huevizador);
+    	ItemStack semilla = new ItemStack(items.ModItems.semilla);
+    	ItemStack carnecerdo = new ItemStack(Items.porkchop);
+    	ItemStack carnevaca = new ItemStack(Items.beef);
+    	ItemStack carneoveja = new ItemStack(items.ModItems.chuleta);
+    	ItemStack carnepollo = new ItemStack(Items.chicken);
+    	
+    	GameRegistry.addRecipe(new ItemStack(Items.spawn_egg,1,90), "zzz", "xyx", "zzz",
+    	        'x', carnecerdo, 'y', huevizador, 'z', semilla);
+    	GameRegistry.addRecipe(new ItemStack(Items.spawn_egg,1,92), "zzz", "xyx", "zzz",
+    	        'x', carnevaca, 'y', huevizador, 'z', semilla);
+    	GameRegistry.addRecipe(new ItemStack(Items.spawn_egg,1,91), "zzz", "xyx", "zzz",
+    	        'x', carneoveja, 'y', huevizador, 'z', semilla);
+    	GameRegistry.addRecipe(new ItemStack(Items.spawn_egg,1,93), "zzz", "xyx", "zzz",
+    	        'x', carnepollo, 'y', huevizador, 'z', semilla);
+    	
+    	//huevooveja
+    	
+    	ItemStack huevizador2 = new ItemStack(items.ModItems.huevizador);
+    	ItemStack semilla2 = new ItemStack(items.ModItems.semilla);
+
+    	GameRegistry.addRecipe(new ItemStack(Items.spawn_egg,1,90), "zzz ", "xyx", "zzz",
+    	        'x', carnecerdo, 'y', huevizador2, 'z', semilla2);
+        
+        
+        
+        
     }
  
     @Mod.EventHandler

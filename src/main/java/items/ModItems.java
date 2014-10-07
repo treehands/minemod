@@ -12,10 +12,18 @@ public final class ModItems {
 	public static Item superguindilla;
 	public static Item chuleta;
 	public static Item chuletaasada;
+	public static Item zafiro;
+	public static Item lingote;
+	public static Item polvozafiro;
+	public static Item huevizador;
 	public static void init() {
 		
+		huevizador = new huevizador();
 		trozocuero = new trozocuero();
+		lingote = new lingote();
+		polvozafiro = new polvozafiro();
 		harina = new harina();
+		zafiro = new zafiro();
 		semilla = new semilla();
 		guindilla = new guindilla();
 		superguindilla = new superguindilla();

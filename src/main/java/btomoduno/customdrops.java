@@ -23,7 +23,5 @@ if(event.entityLiving instanceof EntitySheep)
 {
 event.entityLiving.entityDropItem(new ItemStack(items.ModItems.chuleta), dropped);
 }
-
 }
-
 }
