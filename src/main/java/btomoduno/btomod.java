@@ -1,6 +1,10 @@
 package btomoduno;
 import lib.Constants;
 import items.ModItems;
+import plants.BlockBlueberry;
+import plants.BlockFresa;
+import plants.ItemBlueberry;
+import plants.ItemFresa;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -20,22 +24,39 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class btomod {
  
+	
+	public final static Block blockBlueberry = new BlockBlueberry();
+	public final static Item blueberry = new ItemBlueberry();
+	public final static Block blockFresa = new BlockFresa();
+	public final static Item fresa = new ItemFresa();
+	
     @Mod.EventHandler
-  
+    
+    
     public void preInit(FMLPreInitializationEvent event) {
     	
-    	 ModItems.init();
-    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 6);
-    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.guindilla), 6);
-    	 
+   	 GameRegistry.registerBlock(blockBlueberry, "blueberries");
+   	 GameRegistry.registerItem(blueberry, "blueberry");
+   	 GameRegistry.registerBlock(blockFresa, "fresal");
+   	 GameRegistry.registerItem(fresa, "fresa");
+   	 MinecraftForge.addGrassSeed(new ItemStack(blueberry), 2);
+   	 MinecraftForge.addGrassSeed(new ItemStack(fresa), 2);
+   	 ModItems.init();
+   	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 6);
+   	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.guindilla), 6);
+
     }
    
+    
+	
+	
 @SidedProxy(clientSide = Constants.CLIENT_PROXY_CLASS, serverSide = Constants.SERVER_PROXY_CLASS)
 public static CommonProxy proxy;
- 
-    
+
+   
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+    	
     	
     	proxy.registerRenderThings();
     	proxy.registerSounds();
@@ -71,6 +92,12 @@ public static CommonProxy proxy;
     	ItemStack agua = new ItemStack(Items.water_bucket);
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.btofood,9), "xxx", "yyy", " z ",
     	        'x', guindilla, 'y', harina, 'z', agua);
+    	
+    	//abono
+
+    	ItemStack harina2 = new ItemStack(items.ModItems.harina);
+    	GameRegistry.addRecipe(new ItemStack(Items.dye,0,15), "xxx", " x ", "xxx",
+    	        'x', harina2);
     	
     	
   	
