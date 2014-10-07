@@ -152,16 +152,6 @@ public static CommonProxy proxy;
     	GameRegistry.addRecipe(new ItemStack(Items.spawn_egg,1,93), "zzz", "xyx", "zzz",
     	        'x', carnepollo, 'y', huevizador, 'z', semilla);
     	
-    	//huevooveja
-    	
-    	ItemStack huevizador2 = new ItemStack(items.ModItems.huevizador);
-    	ItemStack semilla2 = new ItemStack(items.ModItems.semilla);
-
-    	GameRegistry.addRecipe(new ItemStack(Items.spawn_egg,1,90), "zzz ", "xyx", "zzz",
-    	        'x', carnecerdo, 'y', huevizador2, 'z', semilla2);
-        
-        
-        
         
     }
  
