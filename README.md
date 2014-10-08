@@ -3,7 +3,7 @@ bTo Chili Hunter
 
 [Recipes]
 
-(http://imgur.com/7SvG769)
+![](http://imgur.com/7SvG769)
 (http://imgur.com/7vqBLDc)
 (http://imgur.com/Yy8E83E)
 (http://imgur.com/yB2Jgtd)
