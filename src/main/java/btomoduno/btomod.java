@@ -175,6 +175,18 @@ public static CommonProxy proxy;
     	GameRegistry.addShapelessRecipe(tarrolleno,tarrovacio,mermeladafresa);
     	GameRegistry.addShapelessRecipe(tarrolleno,tarrovacio,mermeladaarandano);
     	
+    	
+    	//Tostada
+    	ItemStack mermeladafresa2 = new ItemStack(items.ModItems.mermeladafresa);
+    	ItemStack mermeladaarandano2 = new ItemStack(items.ModItems.mermeladaarandano);
+    	ItemStack tostada = new ItemStack(items.ModItems.panconmermelada);
+    	ItemStack pan = new ItemStack(Items.bread);
+    	
+    	GameRegistry.addShapelessRecipe(tostada,pan,mermeladafresa);
+    	GameRegistry.addShapelessRecipe(tostada,pan,mermeladaarandano);
+    	
+    	
+    	
     }
  
     @Mod.EventHandler
