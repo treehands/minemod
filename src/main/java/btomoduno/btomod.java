@@ -153,6 +153,22 @@ public static CommonProxy proxy;
     	        'x', carnepollo, 'y', huevizador, 'z', semilla);
     	
         
+    	//mermeladas
+    	
+    	GameRegistry.addSmelting(fresa, new ItemStack(items.ModItems.mermeladafresa,1), 0.1f);
+    	GameRegistry.addSmelting(blueberry, new ItemStack(items.ModItems.mermeladaarandano,1), 0.1f);
+    	
+    	
+    	//tarro vacio
+
+    	ItemStack cristal = new ItemStack(Blocks.glass);	
+    	ItemStack madera = new ItemStack(Blocks.wooden_pressure_plate);
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.tarrovacio), "xxx", "y y", "yyy",
+    	        'x', madera, 'y', cristal);
+    	
+   	
+    	
+    	
     }
  
     @Mod.EventHandler
