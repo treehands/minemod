@@ -166,8 +166,14 @@ public static CommonProxy proxy;
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.tarrovacio), "xxx", "y y", "yyy",
     	        'x', madera, 'y', cristal);
     	
-   	
+   	    //Tarro lleno
+    	ItemStack tarrovacio = new ItemStack(items.ModItems.tarrovacio);
+    	ItemStack tarrolleno = new ItemStack(items.ModItems.tarrolleno);
+    	ItemStack mermeladafresa = new ItemStack(items.ModItems.mermeladafresa);
+    	ItemStack mermeladaarandano = new ItemStack(items.ModItems.mermeladaarandano);
     	
+    	GameRegistry.addShapelessRecipe(tarrolleno,tarrovacio,mermeladafresa);
+    	GameRegistry.addShapelessRecipe(tarrolleno,tarrovacio,mermeladaarandano);
     	
     }
  
