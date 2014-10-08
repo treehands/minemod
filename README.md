@@ -15,3 +15,7 @@ bTo Chili Hunter
 ![9](http://imgur.com/dpJR1ZB.png)
 ![10](http://imgur.com/hbMkU0A.png)
 ![11](http://imgur.com/jhHidKV.png)
+![12](http://i.imgur.com/LbckP9n.png)
+![13](http://i.imgur.com/JxiSVs2.png)
+![14](http://i.imgur.com/EjTTNKa.png)
+![15](http://i.imgur.com/xyugSBj.png)
