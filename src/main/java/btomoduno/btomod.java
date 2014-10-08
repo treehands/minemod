@@ -163,7 +163,7 @@ public static CommonProxy proxy;
         
     	//mermeladas
     	
-    	//GameRegistry.addSmelting(fresa, new ItemStack(items.ModItems.mermeladafresa,1), 0.1f);
+    	GameRegistry.addSmelting(fresa, new ItemStack(items.ModItems.mermeladafresa,1), 0.1f);
     	GameRegistry.addSmelting(blueberry, new ItemStack(items.ModItems.mermeladaarandano,1), 0.1f);
     	
     	
