@@ -10,9 +10,11 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -35,6 +37,12 @@ public class btomod {
     
     
     public void preInit(FMLPreInitializationEvent event) {
+    	
+     	proxy.registerRenderThings();
+     	proxy.registerSounds();
+     	proxy.registerRenderers();
+    	
+    	
      GameRegistry.registerWorldGenerator(new WorldGeneratorbto(), 1);
    	 GameRegistry.registerBlock(blockBlueberry, "blueberries");
    	 GameRegistry.registerItem(blueberry, "blueberry");
@@ -46,6 +54,7 @@ public class btomod {
    	 ModItems.init();
    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 6);
    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.guindilla), 6);
+
 
     }
    
@@ -59,8 +68,7 @@ public static CommonProxy proxy;
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
     	MinecraftForge.EVENT_BUS.register(new customdrops());
-    	proxy.registerRenderThings();
-    	proxy.registerSounds();
+;
     	
     
     	
@@ -155,7 +163,7 @@ public static CommonProxy proxy;
         
     	//mermeladas
     	
-    	GameRegistry.addSmelting(fresa, new ItemStack(items.ModItems.mermeladafresa,1), 0.1f);
+    	//GameRegistry.addSmelting(fresa, new ItemStack(items.ModItems.mermeladafresa,1), 0.1f);
     	GameRegistry.addSmelting(blueberry, new ItemStack(items.ModItems.mermeladaarandano,1), 0.1f);
     	
     	
