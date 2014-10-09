@@ -22,8 +22,13 @@ public final class ModItems {
 	public static Item mermeladafresa;
 	public static Item mermeladaarandano;
 	public static Item panconmermelada;
+	public static Item botellavacia;
+	public static Item botellavino;
+	
 	public static void init() {
 		
+		
+		botellavacia = new botellavacia();
 		tarrolleno = new tarrolleno();		
 		tarrovacio = new tarrovacio();		
 		mermeladafresa = new mermeladafresa();
@@ -39,6 +44,7 @@ public final class ModItems {
 		guindilla = new guindilla();
 		superguindilla = new superguindilla();
 		btofood = new btofood(4, 0.3f, false);
+		botellavino = new botellavino(4, 0.3f, false);
 		chuleta = new chuleta(6, 0.3f, true);
 		chuletaasada = new chuletaasada(8, 0.3f, true);
 		panconmermelada = new panconmermelada(8, 0.3f, false);

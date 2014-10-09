@@ -4,8 +4,10 @@ import lib.Constants;
 import items.ModItems;
 import plants.BlockBlueberry;
 import plants.BlockFresa;
+import plants.BlockUva;
 import plants.ItemBlueberry;
 import plants.ItemFresa;
+import plants.ItemUva;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -32,6 +34,8 @@ public class btomod {
 	public final static Item blueberry = new ItemBlueberry();
 	public final static Block blockFresa = new BlockFresa();
 	public final static Item fresa = new ItemFresa();
+	public final static Block blockUva = new BlockUva();
+	public final static Item uva = new ItemUva();
 	
     @Mod.EventHandler
     
@@ -48,12 +52,15 @@ public class btomod {
    	 GameRegistry.registerItem(blueberry, "blueberry");
    	 GameRegistry.registerBlock(blockFresa, "fresal");
    	 GameRegistry.registerItem(fresa, "fresa");
-   	 MinecraftForge.addGrassSeed(new ItemStack(blueberry), 2);
-   	 MinecraftForge.addGrassSeed(new ItemStack(fresa), 2);
+   	 GameRegistry.registerBlock(blockUva, "vid");
+   	 GameRegistry.registerItem(uva, "uva");
+   	 MinecraftForge.addGrassSeed(new ItemStack(blueberry), 1);
+   	 MinecraftForge.addGrassSeed(new ItemStack(fresa), 1);
+   	 MinecraftForge.addGrassSeed(new ItemStack(uva), 1);
    	 ModBlocks.init();
    	 ModItems.init();
-   	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 6);
-   	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.guindilla), 6);
+   	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 3);
+   	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.guindilla), 3);
 
 
     }
@@ -170,7 +177,7 @@ public static CommonProxy proxy;
     	//tarro vacio
 
     	ItemStack cristal = new ItemStack(Blocks.glass);	
-    	ItemStack madera = new ItemStack(Blocks.wooden_pressure_plate);
+    	ItemStack madera = new ItemStack(Blocks.wooden_slab);
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.tarrovacio), "xxx", "y y", "yyy",
     	        'x', madera, 'y', cristal);
     	
@@ -193,6 +200,19 @@ public static CommonProxy proxy;
     	GameRegistry.addShapelessRecipe(tostada,pan,mermeladafresa);
     	GameRegistry.addShapelessRecipe(tostada,pan,mermeladaarandano);
     	
+    	
+    	//botellavacia
+
+    	ItemStack cristal2 = new ItemStack(Blocks.glass);	
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.botellavacia), " x ", "x x", "xxx",
+    	        'x', cristal2);
+    	
+    	//botellavinoa
+
+    	ItemStack botellavacia = new ItemStack(items.ModItems.botellavacia);
+    	ItemStack uvas = new ItemStack(uva);
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.botellavino), "xxx", "xyx", "xxx",
+    	        'x', uvas, 'y', botellavacia );
     	
     	
     }
