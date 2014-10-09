@@ -5,9 +5,11 @@ import items.ModItems;
 import plants.BlockBlueberry;
 import plants.BlockFresa;
 import plants.BlockUva;
+import plants.BlockGuindilla;
 import plants.ItemBlueberry;
 import plants.ItemFresa;
 import plants.ItemUva;
+import plants.ItemGuindilla;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -36,6 +38,8 @@ public class btomod {
 	public final static Item fresa = new ItemFresa();
 	public final static Block blockUva = new BlockUva();
 	public final static Item uva = new ItemUva();
+	public final static Block blockGuindilla = new BlockGuindilla();
+	public final static Item guindilla = new ItemGuindilla();
 	
     @Mod.EventHandler
     
@@ -54,13 +58,16 @@ public class btomod {
    	 GameRegistry.registerItem(fresa, "fresa");
    	 GameRegistry.registerBlock(blockUva, "vid");
    	 GameRegistry.registerItem(uva, "uva");
+   	 GameRegistry.registerBlock(blockGuindilla, "guindillera");
+   	 GameRegistry.registerItem(guindilla, "guindilla");
    	 MinecraftForge.addGrassSeed(new ItemStack(blueberry), 1);
    	 MinecraftForge.addGrassSeed(new ItemStack(fresa), 1);
    	 MinecraftForge.addGrassSeed(new ItemStack(uva), 1);
+   	 MinecraftForge.addGrassSeed(new ItemStack(guindilla), 1);
    	 ModBlocks.init();
    	 ModItems.init();
    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 3);
-   	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.guindilla), 3);
+
 
 
     }
@@ -103,11 +110,11 @@ public static CommonProxy proxy;
     	
     	//micomida
 
-    	ItemStack guindilla = new ItemStack(items.ModItems.guindilla);	
+    	ItemStack guindilla2 = new ItemStack(guindilla);	
     	ItemStack harina = new ItemStack(items.ModItems.harina);
     	ItemStack agua = new ItemStack(Items.water_bucket);
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.btofood,9), "xxx", "yyy", " z ",
-    	        'x', guindilla, 'y', harina, 'z', agua);
+    	        'x', guindilla2, 'y', harina, 'z', agua);
     	
     	//abono
 
@@ -120,7 +127,7 @@ public static CommonProxy proxy;
     		
     	//superguindilla
     	
-    	ItemStack guindilla2 = new ItemStack(items.ModItems.guindilla);
+    	ItemStack guindilla3 = new ItemStack(guindilla);
     	ItemStack diamanteg = new ItemStack(Items.diamond);
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.superguindilla), "xxx", "xyx", "xxx",
     	        'x', guindilla2, 'y', diamanteg);
@@ -133,7 +140,7 @@ public static CommonProxy proxy;
     	
     	
     	//semillas de guindillas
-    	GameRegistry.addShapelessRecipe(new ItemStack(items.ModItems.semilla, 3), new Object[] {items.ModItems.guindilla});
+    	GameRegistry.addShapelessRecipe(new ItemStack(items.ModItems.semilla, 3), new Object[] {guindilla});
     	
     	//polvozafiro
     	

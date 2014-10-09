@@ -1,7 +1,8 @@
 item.btomoduno_trozocuero.name=Damaged leather
 item.btomoduno_harina.name=Flour
 item.btomoduno_semilla.name=Seed
-item.btomoduno_guindilla.name=Chili
+item.guindilla.name=Chili
+tile.guindillera.name=Chili Plant
 item.btomoduno_superguindilla.name=Suppachili
 item.btomoduno_btofood.name=Chili Cake
 tile.blueberries.name=Blueberries

@@ -8,7 +8,6 @@ public final class ModItems {
 	public static Item btofood;
 	public static Item harina;
 	public static Item semilla;
-	public static Item guindilla;
 	public static Item superguindilla;
 	public static Item chuleta;
 	public static Item chuletaasada;
@@ -29,7 +28,6 @@ public final class ModItems {
 		
 		
 		botellavacia = new botellavacia();
-		tarrolleno = new tarrolleno();		
 		tarrovacio = new tarrovacio();		
 		mermeladafresa = new mermeladafresa();
 		mermeladaarandano = new mermeladaarandano();
@@ -41,12 +39,12 @@ public final class ModItems {
 		harina = new harina();
 		zafiro = new zafiro();
 		semilla = new semilla();
-		guindilla = new guindilla();
 		superguindilla = new superguindilla();
 		btofood = new btofood(4, 0.3f, false);
-		botellavino = new botellavino(4, 0.3f, false);
-		chuleta = new chuleta(6, 0.3f, true);
+		botellavino = new botellavino(4, 0.3f, false).setContainerItem(items.ModItems.botellavacia);
+		chuleta = new chuleta(4, 0.3f, true);
 		chuletaasada = new chuletaasada(8, 0.3f, true);
-		panconmermelada = new panconmermelada(8, 0.3f, false);
+		panconmermelada = new panconmermelada(5, 0.3f, false);
+		tarrolleno = new tarrolleno(8, 0.3f, true).setContainerItem(items.ModItems.tarrovacio);
 	}
 }
