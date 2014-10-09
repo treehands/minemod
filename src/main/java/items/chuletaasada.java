@@ -5,15 +5,9 @@ import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import lib.Constants;
 import cpw.mods.fml.common.registry.GameRegistry;
- 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
-import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.MathHelper;
  
 public class chuletaasada extends ItemFood {
 	 
