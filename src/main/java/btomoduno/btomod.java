@@ -68,24 +68,16 @@ public class btomod {
    	 ModItems.init();
    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 3);
 
-
-
     }
-   
-    
-	
-	
+   	
 @SidedProxy(clientSide = Constants.CLIENT_PROXY_CLASS, serverSide = Constants.SERVER_PROXY_CLASS)
 public static CommonProxy proxy;
-
    
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
     	MinecraftForge.EVENT_BUS.register(new customdrops());
-;
     	
-    
-    	
+        	
     	//saddle
     	
     	ItemStack cueros = new ItemStack(Items.leather);
@@ -130,7 +122,7 @@ public static CommonProxy proxy;
     	ItemStack guindilla3 = new ItemStack(guindilla);
     	ItemStack diamanteg = new ItemStack(Items.diamond);
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.superguindilla), "xxx", "xyx", "xxx",
-    	        'x', guindilla2, 'y', diamanteg);
+    	        'x', guindilla3, 'y', diamanteg);
     	
     	
     	
