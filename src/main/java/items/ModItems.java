@@ -41,10 +41,10 @@ public final class ModItems {
 		semilla = new semilla();
 		superguindilla = new superguindilla();
 		btofood = new btofood(4, 0.3f, false);
-		botellavino = new botellavino(4, 0.3f, false).setContainerItem(items.ModItems.botellavacia);
+		botellavino = new botellavino(4, 0.3f, false);
 		chuleta = new chuleta(4, 0.3f, true);
 		chuletaasada = new chuletaasada(8, 0.3f, true);
 		panconmermelada = new panconmermelada(5, 0.3f, false);
-		tarrolleno = new tarrolleno(8, 0.3f, true).setContainerItem(items.ModItems.tarrovacio);
+		tarrolleno = new tarrolleno(8, 0.3f, true);
 	}
 }
