@@ -11,6 +11,7 @@ import plants.ItemFresa;
 import plants.ItemUva;
 import plants.ItemGuindilla;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -31,7 +32,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class btomod {
  
-	
+
 	public final static Block blockBlueberry = new BlockBlueberry();
 	public final static Item blueberry = new ItemBlueberry();
 	public final static Block blockFresa = new BlockFresa();
@@ -41,16 +42,14 @@ public class btomod {
 	public final static Block blockGuindilla = new BlockGuindilla();
 	public final static Item guindilla = new ItemGuindilla();
 	
-    @Mod.EventHandler
+	@Mod.EventHandler
     
     
     public void preInit(FMLPreInitializationEvent event) {
-    	
-     	proxy.registerRenderThings();
+		proxy.registerRenderThings();
      	proxy.registerSounds();
      	proxy.registerRenderers();
-    	
-    	
+    
      GameRegistry.registerWorldGenerator(new WorldGeneratorbto(), 1);
    	 GameRegistry.registerBlock(blockBlueberry, "blueberries");
    	 GameRegistry.registerItem(blueberry, "blueberry");
@@ -67,7 +66,7 @@ public class btomod {
    	 ModBlocks.init();
    	 ModItems.init();
    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 3);
-
+   	
     }
    	
 @SidedProxy(clientSide = Constants.CLIENT_PROXY_CLASS, serverSide = Constants.SERVER_PROXY_CLASS)
@@ -102,11 +101,11 @@ public static CommonProxy proxy;
     	
     	//micomida
 
-    	ItemStack guindilla2 = new ItemStack(guindilla);	
+    	ItemStack tabasco = new ItemStack(items.ModItems.tabasco);	
     	ItemStack harina = new ItemStack(items.ModItems.harina);
     	ItemStack agua = new ItemStack(Items.water_bucket);
-    	GameRegistry.addRecipe(new ItemStack(items.ModItems.btofood,9), "xxx", "yyy", " z ",
-    	        'x', guindilla2, 'y', harina, 'z', agua);
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.btofood,16), " x ", "yyy", " z ",
+    	        'x', tabasco, 'y', harina, 'z', agua);
     	
     	//abono
 
@@ -206,14 +205,22 @@ public static CommonProxy proxy;
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.botellavacia), " x ", "x x", "xxx",
     	        'x', cristal2);
     	
-    	//botellavinoa
+    	//botellavino
 
     	ItemStack botellavacia = new ItemStack(items.ModItems.botellavacia);
     	ItemStack uvas = new ItemStack(uva);
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.botellavino), "xxx", "xyx", "xxx",
     	        'x', uvas, 'y', botellavacia );
     	
+    	//tabasco
+
+    	ItemStack botellavacia2 = new ItemStack(items.ModItems.botellavacia);
+    	ItemStack guindilla4 = new ItemStack(guindilla);
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.tabasco), "xxx", "xyx", "xxx",
+    	        'x', guindilla4, 'y', botellavacia );
     	
+    
+    
     }
  
     @Mod.EventHandler

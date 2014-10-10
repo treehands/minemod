@@ -8,17 +8,17 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
-public class btofood extends ItemFood {
+ 
+public class tabasco extends ItemFood {
 	 
-	private String name = "btofood";
-	public btofood(int heal, float saturation, boolean wolfMeat) {
+	private String name = "tabasco";
+	public tabasco(int heal, float saturation, boolean wolfMeat) {
 	super(heal, saturation, wolfMeat);
 	setUnlocalizedName(Constants.MODID + "_" + name);
 	setTextureName(Constants.MODID + ":" + name);
 	setCreativeTab(CreativeTabs.tabFood);
 	GameRegistry.registerItem(this, name);
-	setPotionEffect(Potion.moveSpeed.id, 100, 2, 1.0F);
-
+	setPotionEffect(Potion.moveSpeed.id, 100, 0, 1.0F);
 	}
 	}
 	
