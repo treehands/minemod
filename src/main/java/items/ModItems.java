@@ -24,10 +24,13 @@ public final class ModItems {
 	public static Item botellavacia;
 	public static Item botellavino;
 	public static Item tabasco;
+	public static Item veneno;
+	public static Item polvoveneno;
 	
 	public static void init() {
 		
-		
+		polvoveneno = new polvoveneno();
+		veneno = new veneno();
 		botellavacia = new botellavacia();
 		tarrovacio = new tarrovacio();		
 		mermeladafresa = new mermeladafresa();

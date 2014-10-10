@@ -220,7 +220,18 @@ public static CommonProxy proxy;
     	        'x', guindilla4, 'y', botellavacia );
     	
     
-    
+    	//polvovenenoso
+    	
+    	GameRegistry.addSmelting(Items.poisonous_potato, new ItemStack(items.ModItems.polvoveneno,1), 0.1f);
+    	
+    	//Veneno
+    	ItemStack botellavacia3 = new ItemStack(items.ModItems.botellavacia);
+    	ItemStack polvoveneno = new ItemStack(items.ModItems.polvoveneno);
+    	ItemStack veneno = new ItemStack(items.ModItems.veneno);
+    	
+    	GameRegistry.addShapelessRecipe(veneno,botellavacia3,polvoveneno);
+       	
+    	
     }
  
     @Mod.EventHandler
