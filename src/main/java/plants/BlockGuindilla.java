@@ -66,7 +66,7 @@ this.field_149867_a[3] = p_149651_1_.registerIcon(Constants.MODID + ":" + "guind
 this.field_149867_a[4] = p_149651_1_.registerIcon(Constants.MODID + ":" + "guindillera_stage_2");
 this.field_149867_a[5] = p_149651_1_.registerIcon(Constants.MODID + ":" + "guindillera_stage_2");
 this.field_149867_a[6] = p_149651_1_.registerIcon(Constants.MODID + ":" + "guindillera_stage_3");
-this.field_149867_a[7] = p_149651_1_.registerIcon(Constants.MODID + ":" + "guindillera_stage_3");
+this.field_149867_a[7] = p_149651_1_.registerIcon(Constants.MODID + ":" + "guindillera_stage_4");
  
 }
 }
