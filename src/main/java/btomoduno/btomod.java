@@ -232,6 +232,15 @@ public static CommonProxy proxy;
     	GameRegistry.addShapelessRecipe(veneno,botellavacia3,polvoveneno);
        	
     	
+    	//zumo raro
+    	ItemStack mipapeo = new ItemStack(items.ModItems.btofood);
+    	ItemStack tabasco2 = new ItemStack(items.ModItems.tabasco);
+    	ItemStack huevizador2 = new ItemStack(items.ModItems.huevizador);
+    	ItemStack botellavino = new ItemStack(items.ModItems.botellavino);
+    	ItemStack veneno2 = new ItemStack(items.ModItems.veneno);
+    	ItemStack tostada2 = new ItemStack(items.ModItems.panconmermelada);
+        GameRegistry.addRecipe(new ItemStack(items.ModItems.zumoraro), "xzx", "oyo", "qpq",
+	      'x', tabasco2, 'y', botellavino, 'z', huevizador2, 'o', tostada2, 'p', veneno2, 'q', mipapeo);
     }
  
     @Mod.EventHandler

@@ -26,9 +26,11 @@ public final class ModItems {
 	public static Item tabasco;
 	public static Item veneno;
 	public static Item polvoveneno;
+	public static Item zumoraro;
 	
 	public static void init() {
 		
+		zumoraro = new zumoraro();
 		polvoveneno = new polvoveneno();
 		veneno = new veneno();
 		botellavacia = new botellavacia();
