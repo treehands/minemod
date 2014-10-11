@@ -1,5 +1,6 @@
 package items;
 
+import btomoduno.btomod;
 import lib.Constants;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
@@ -12,7 +13,7 @@ public class tarrolleno extends ItemFood {
 	super(heal, saturation, wolfMeat);
 	setUnlocalizedName(Constants.MODID + "_" + name);
 	setTextureName(Constants.MODID + ":" + name);
-	setCreativeTab(CreativeTabs.tabFood);
+	setCreativeTab(btomod.tabName);
 	GameRegistry.registerItem(this, name);
 
 	}

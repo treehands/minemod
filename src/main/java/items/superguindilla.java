@@ -1,5 +1,6 @@
 package items;
 
+import btomoduno.btomod;
 import lib.Constants;
 import cpw.mods.fml.common.eventhandler.Event;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -27,7 +28,7 @@ setUnlocalizedName(Constants.MODID + "_" + name);
 GameRegistry.registerItem(this, name);
 setTextureName(Constants.MODID + ":" + name);
 setMaxDamage(100);
-setCreativeTab(CreativeTabs.tabCombat);
+setCreativeTab(btomod.tabName);
 }
 
 public boolean func_111207_a(ItemStack itemstack, EntityPlayer player, EntityLivingBase target){

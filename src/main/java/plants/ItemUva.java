@@ -14,7 +14,7 @@ public ItemUva() {
 super(1, 0.3F, btomod.blockUva, Blocks.farmland);
 this.setUnlocalizedName("uva");
 this.setTextureName(Constants.MODID + ":" + "uva");
-this.setCreativeTab(CreativeTabs.tabFood);
+this.setCreativeTab(btomod.tabName);
  
 }
  

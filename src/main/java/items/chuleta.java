@@ -1,5 +1,6 @@
 package items;
 
+import btomoduno.btomod;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -16,7 +17,7 @@ public class chuleta extends ItemFood {
 	super(heal, saturation, wolfMeat);
 	setUnlocalizedName(Constants.MODID + "_" + name);
 	setTextureName(Constants.MODID + ":" + name);
-	setCreativeTab(CreativeTabs.tabFood);
+	setCreativeTab(btomod.tabName);
 	GameRegistry.registerItem(this, name);
 
 	}

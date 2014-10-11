@@ -17,6 +17,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Instance;
@@ -31,8 +32,16 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = "btomoduno", name = "bTo Chili Hunter", version = "1.0.0")
 
 public class btomod {
- 
 
+	public static CreativeTabs tabName = new CreativeTabs("btotab")
+	 {
+	 public Item getTabIconItem()
+	 {
+	 return items.ModItems.superguindilla;
+	 }
+	 };
+	
+	
 	public final static Block blockBlueberry = new BlockBlueberry();
 	public final static Item blueberry = new ItemBlueberry();
 	public final static Block blockFresa = new BlockFresa();
@@ -43,8 +52,6 @@ public class btomod {
 	public final static Item guindilla = new ItemGuindilla();
 	
 	@Mod.EventHandler
-    
-    
     public void preInit(FMLPreInitializationEvent event) {
 		proxy.registerRenderThings();
      	proxy.registerSounds();
@@ -70,13 +77,15 @@ public class btomod {
     }
    	
 @SidedProxy(clientSide = Constants.CLIENT_PROXY_CLASS, serverSide = Constants.SERVER_PROXY_CLASS)
+	
 public static CommonProxy proxy;
    
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+    	
     	MinecraftForge.EVENT_BUS.register(new customdrops());
     	
-        	
+    	        	
     	//saddle
     	
     	ItemStack cueros = new ItemStack(Items.leather);
@@ -213,12 +222,11 @@ public static CommonProxy proxy;
     	        'x', uvas, 'y', botellavacia );
     	
     	//tabasco
-
     	ItemStack botellavacia2 = new ItemStack(items.ModItems.botellavacia);
     	ItemStack guindilla4 = new ItemStack(guindilla);
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.tabasco), "xxx", "xyx", "xxx",
     	        'x', guindilla4, 'y', botellavacia );
-    	
+
     
     	//polvovenenoso
     	
@@ -233,14 +241,14 @@ public static CommonProxy proxy;
        	
     	
     	//zumo raro
-    	ItemStack mipapeo = new ItemStack(items.ModItems.btofood);
+    	ItemStack tarrolleno2 = new ItemStack(items.ModItems.tarrolleno);
     	ItemStack tabasco2 = new ItemStack(items.ModItems.tabasco);
     	ItemStack huevizador2 = new ItemStack(items.ModItems.huevizador);
     	ItemStack botellavino = new ItemStack(items.ModItems.botellavino);
     	ItemStack veneno2 = new ItemStack(items.ModItems.veneno);
     	ItemStack tostada2 = new ItemStack(items.ModItems.panconmermelada);
-        GameRegistry.addRecipe(new ItemStack(items.ModItems.zumoraro), "xzx", "oyo", "qpq",
-	      'x', tabasco2, 'y', botellavino, 'z', huevizador2, 'o', tostada2, 'p', veneno2, 'q', mipapeo);
+        GameRegistry.addRecipe(new ItemStack(items.ModItems.zumoraro), "xyx", "ozo", "pqp",
+	      'x', tabasco2, 'y', botellavino, 'z', huevizador2, 'o', tostada2, 'p', veneno2, 'q', tarrolleno2);
     }
  
     @Mod.EventHandler
@@ -248,5 +256,6 @@ public static CommonProxy proxy;
  
     }
 }
+	
 
 

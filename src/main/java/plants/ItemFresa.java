@@ -14,7 +14,7 @@ public ItemFresa() {
 super(1, 0.3F, btomod.blockFresa, Blocks.farmland);
 this.setUnlocalizedName("fresa");
 this.setTextureName(Constants.MODID + ":" + "fresa");
-this.setCreativeTab(CreativeTabs.tabFood);
+this.setCreativeTab(btomod.tabName);
  
 }
  

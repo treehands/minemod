@@ -2,6 +2,7 @@ package items;
 
 import java.util.Random;
 
+import btomoduno.btomod;
 import lib.Constants;
 import cpw.mods.fml.common.Mod.Metadata;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -21,7 +22,7 @@ public huevizador() {
 setUnlocalizedName(Constants.MODID + "_" + name);
 GameRegistry.registerItem(this, name);
 setTextureName(Constants.MODID + ":" + name);
-setCreativeTab(CreativeTabs.tabMaterials);
+setCreativeTab(btomod.tabName);
 }
 
 }

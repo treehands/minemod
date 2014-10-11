@@ -1,5 +1,6 @@
 package items;
 
+import btomoduno.btomod;
 import lib.Constants;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
@@ -11,6 +12,6 @@ public harina() {
 setUnlocalizedName(Constants.MODID + "_" + name);
 GameRegistry.registerItem(this, name);
 setTextureName(Constants.MODID + ":" + name);
-setCreativeTab(CreativeTabs.tabMaterials);
+setCreativeTab(btomod.tabName);
 }
 }

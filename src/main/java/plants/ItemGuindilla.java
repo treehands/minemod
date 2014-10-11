@@ -14,7 +14,7 @@ public ItemGuindilla() {
 super(1, 0.3F, btomod.blockGuindilla, Blocks.farmland);
 this.setUnlocalizedName("guindilla");
 this.setTextureName(Constants.MODID + ":" + "guindilla");
-this.setCreativeTab(CreativeTabs.tabFood);
+this.setCreativeTab(btomod.tabName);
  
 }
  

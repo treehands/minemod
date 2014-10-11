@@ -2,6 +2,7 @@ package blocks;
 
 import java.util.Random;
 
+import btomoduno.btomod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -20,7 +21,7 @@ public class oreblock extends Block {
 	        super(Material.rock);
 	        this.setHardness(3f); 
 	        this.setResistance(30f);
-	        this.setCreativeTab(CreativeTabs.tabBlock);
+	        this.setCreativeTab(btomod.tabName);
 	        this.setBlockName(Constants.MODID + "_" + name);
 	        this.setBlockTextureName(Constants.MODID + ":" + name);     
 	        GameRegistry.registerBlock(this, name);

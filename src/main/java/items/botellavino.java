@@ -1,5 +1,6 @@
 package items;
 
+import btomoduno.btomod;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -16,7 +17,7 @@ public class botellavino extends ItemFood {
 	super(heal, saturation, wolfMeat);
 	setUnlocalizedName(Constants.MODID + "_" + name);
 	setTextureName(Constants.MODID + ":" + name);
-	setCreativeTab(CreativeTabs.tabFood);
+	setCreativeTab(btomod.tabName);
 	GameRegistry.registerItem(this, name);
 	setPotionEffect(Potion.jump.id, 100, 0, 1.0F);
 	setPotionEffect(Potion.confusion.id, 20, 0, 1.0F);
