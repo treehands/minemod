@@ -1,38 +1,48 @@
 package btomoduno;
-import blocks.ModBlocks;
-import lib.Constants;
+import java.util.Random;
+
 import items.ModItems;
-import plants.BlockBlueberry;
-import plants.BlockFresa;
-import plants.BlockUva;
-import plants.BlockGuindilla;
-import plants.ItemBlueberry;
-import plants.ItemFresa;
-import plants.ItemUva;
-import plants.ItemGuindilla;
+import lib.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityList;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
-import net.minecraft.stats.Achievement;
+import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.common.MinecraftForge;
+import plants.BlockBlueberry;
+import plants.BlockCebolla;
+import plants.BlockFresa;
+import plants.BlockGuindilla;
+import plants.BlockUva;
+import plants.ItemBlueberry;
+import plants.ItemCebolla;
+import plants.ItemFresa;
+import plants.ItemGuindilla;
+import plants.ItemUva;
+import proxy.CommonProxy;
+import blocks.ModBlocks;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+import entities.EntityWalker;
  
 
 @Mod(modid = "btomoduno", name = "bTo Chili Hunter", version = "1.0.0")
 
+
 public class btomod {
 
+	//creative tab	
 	public static CreativeTabs tabName = new CreativeTabs("btotab")
 	 {
 	 public Item getTabIconItem()
@@ -40,8 +50,10 @@ public class btomod {
 	 return items.ModItems.superguindilla;
 	 }
 	 };
-	
-	
+
+	//plantas
+	public final static Block blockCebolla = new BlockCebolla();
+	public final static Item cebolla = new ItemCebolla();
 	public final static Block blockBlueberry = new BlockBlueberry();
 	public final static Item blueberry = new ItemBlueberry();
 	public final static Block blockFresa = new BlockFresa();
@@ -51,13 +63,33 @@ public class btomod {
 	public final static Block blockGuindilla = new BlockGuindilla();
 	public final static Item guindilla = new ItemGuindilla();
 	
+	//mob
+	public static void registerEntity(Class entityClass, String name)
+	{
+	int entityID = EntityRegistry.findGlobalUniqueEntityId();
+	long seed = name.hashCode();
+	Random rand = new Random(seed);
+	int primaryColor = rand.nextInt() * 16777215;
+	int secondaryColor = rand.nextInt() * 16777215;
+
+	EntityRegistry.registerGlobalEntityID(entityClass, name, entityID);
+	EntityRegistry.registerModEntity(entityClass, name, entityID, Constants.MODID, 64, 1, true);
+	EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, primaryColor, secondaryColor));
+	}
+
 	@Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+		
+			
 		proxy.registerRenderThings();
      	proxy.registerSounds();
      	proxy.registerRenderers();
-    
+     	proxy.registerEntitySpawns();
+
+     registerEntity(EntityWalker.class, "entityWalker");
      GameRegistry.registerWorldGenerator(new WorldGeneratorbto(), 1);
+   	 GameRegistry.registerBlock(blockCebolla, "cebollas");
+   	 GameRegistry.registerItem(cebolla, "cebolla");
    	 GameRegistry.registerBlock(blockBlueberry, "blueberries");
    	 GameRegistry.registerItem(blueberry, "blueberry");
    	 GameRegistry.registerBlock(blockFresa, "fresal");
@@ -70,22 +102,31 @@ public class btomod {
    	 MinecraftForge.addGrassSeed(new ItemStack(fresa), 1);
    	 MinecraftForge.addGrassSeed(new ItemStack(uva), 1);
    	 MinecraftForge.addGrassSeed(new ItemStack(guindilla), 1);
+   	 MinecraftForge.addGrassSeed(new ItemStack(cebolla), 1);
    	 ModBlocks.init();
    	 ModItems.init();
    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 3);
-   	
+ 	    	
+   	 
     }
-   	
+	   	
 @SidedProxy(clientSide = Constants.CLIENT_PROXY_CLASS, serverSide = Constants.SERVER_PROXY_CLASS)
 	
 public static CommonProxy proxy;
    
     @Mod.EventHandler
+    
     public void init(FMLInitializationEvent event) {
+    	
+    	
+    	
+    //Custom drops
     	
     	MinecraftForge.EVENT_BUS.register(new customdrops());
     	
-    	        	
+    	  	
+    //RECETAS
+    	    	
     	//saddle
     	
     	ItemStack cueros = new ItemStack(Items.leather);
@@ -250,12 +291,10 @@ public static CommonProxy proxy;
         GameRegistry.addRecipe(new ItemStack(items.ModItems.zumoraro), "xyx", "ozo", "pqp",
 	      'x', tabasco2, 'y', botellavino, 'z', huevizador2, 'o', tostada2, 'p', veneno2, 'q', tarrolleno2);
     }
- 
+    
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
  
     }
+    
 }
-	
-
-
