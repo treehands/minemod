@@ -1,4 +1,6 @@
 {
+   "wilhelm": {"category": "master","sounds": [{"name": "wilhelm","stream": false}]},
+   "robot1": {"category": "master","sounds": [{"name": "robot1","stream": false}]},
    "blop": {"category": "master","sounds": [{"name": "blop","stream": false}]},
    "superguindilla": {"category": "master","sounds": [{"name": "superguindilla","stream": false}]}
    }

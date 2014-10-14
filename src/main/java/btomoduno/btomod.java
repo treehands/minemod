@@ -34,7 +34,9 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import entities.EntityRobot;
 import entities.EntityWalker;
+import entities.EntityMendas;
  
 
 @Mod(modid = "btomoduno", name = "bTo Chili Hunter", version = "1.0.0")
@@ -63,7 +65,7 @@ public class btomod {
 	public final static Block blockGuindilla = new BlockGuindilla();
 	public final static Item guindilla = new ItemGuindilla();
 	
-	//mob
+	//mobs item eggs
 	public static void registerEntity(Class entityClass, String name)
 	{
 	int entityID = EntityRegistry.findGlobalUniqueEntityId();
@@ -86,6 +88,8 @@ public class btomod {
      	proxy.registerRenderers();
      	proxy.registerEntitySpawns();
 
+     registerEntity(EntityRobot.class, "entityRobot");
+     registerEntity(EntityMendas.class, "entityMendas");
      registerEntity(EntityWalker.class, "entityWalker");
      GameRegistry.registerWorldGenerator(new WorldGeneratorbto(), 1);
    	 GameRegistry.registerBlock(blockCebolla, "cebollas");
@@ -290,6 +294,39 @@ public static CommonProxy proxy;
     	ItemStack tostada2 = new ItemStack(items.ModItems.panconmermelada);
         GameRegistry.addRecipe(new ItemStack(items.ModItems.zumoraro), "xyx", "ozo", "pqp",
 	      'x', tabasco2, 'y', botellavino, 'z', huevizador2, 'o', tostada2, 'p', veneno2, 'q', tarrolleno2);
+   
+    	//botellaaceite
+
+    	ItemStack botellavacia4 = new ItemStack(items.ModItems.botellavacia);
+    	ItemStack semillas = new ItemStack(items.ModItems.semilla);
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.botellaaceite), "xxx", "xyx", "xxx",
+    	        'x', semillas, 'y', botellavacia4 );
+    
+    	
+    	//chip
+
+    	ItemStack hierro2 = new ItemStack(Items.iron_ingot);
+    	ItemStack redstone = new ItemStack(Items.redstone);
+    	ItemStack lingote2 = new ItemStack(items.ModItems.lingote);
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.chip), "xxx", "zyz", "xxx",
+    	        'x', hierro2, 'y', lingote2 , 'z', redstone );
+    	
+    	
+    	//cerebro
+
+    	ItemStack carnuz = new ItemStack(Items.porkchop);
+    	ItemStack chip = new ItemStack(items.ModItems.chip);
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.cerebro), "xxx", "xyx", "xzx",
+    	        'x', carnuz, 'y', chip , 'z', redstone );
+    
+    	
+    	//robot
+
+    	ItemStack cerebro = new ItemStack(items.ModItems.cerebro);
+    	ItemStack chip2 = new ItemStack(items.ModItems.chip);
+    	ItemStack hierro3 = new ItemStack(Items.iron_ingot);
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.robot), " x ", "zyz", " z ",
+    	        'x', cerebro, 'y', chip , 'z', hierro3 );
     }
     
     @Mod.EventHandler

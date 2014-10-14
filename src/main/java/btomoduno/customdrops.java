@@ -7,6 +7,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import entities.EntityRobot;
 import entities.EntityWalker;
 
 public class customdrops
@@ -29,5 +30,11 @@ if(event.entityLiving instanceof EntityWalker)
 event.entityLiving.entityDropItem(new ItemStack(items.ModItems.polvoveneno), dropped);
 event.entityLiving.entityDropItem(new ItemStack(Items.rotten_flesh), dropped);
 }
+
+if(event.entityLiving instanceof EntityRobot)
+{
+event.entityLiving.entityDropItem(new ItemStack(items.ModItems.robot), dropped);
+}
+
 }
 }

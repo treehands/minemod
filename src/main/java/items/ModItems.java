@@ -27,9 +27,16 @@ public final class ModItems {
 	public static Item veneno;
 	public static Item polvoveneno;
 	public static Item zumoraro;
+	public static Item botellaaceite;
+	public static Item chip;
+	public static Item robot;
+	public static Item cerebro;
 	
 	public static void init() {
-		
+		cerebro = new cerebro();
+		chip = new chip();
+		robot = new robot();
+		botellaaceite = new botellaaceite();
 		zumoraro = new zumoraro();
 		polvoveneno = new polvoveneno();
 		veneno = new veneno();
