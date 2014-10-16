@@ -25,6 +25,7 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -42,8 +43,7 @@ public class EntityRobot extends EntityAnimal
 		public EntityRobot(World par1World)
     {
         super(par1World);
-        this.setSize(0.9F, 2F);
-        
+        this.setSize(0.3F, 0.3F);
         this.getNavigator().setBreakDoors(true);
         this.getNavigator().setAvoidsWater(true);
         this.getNavigator().setCanSwim(false);
@@ -63,7 +63,7 @@ public class EntityRobot extends EntityAnimal
        // this.tasks.addTask(11, new EntityAIAttackOnCollide(this, EntityCreeper.class, 1.0D, true));
         this.tasks.addTask(12, new EntityAIPanic(this, 1.4D));
         this.tasks.addTask(13, new EntityAIMate(this, 1.0D));
-        this.tasks.addTask(14, new EntityAITempt(this, 1.0D, btomod.guindilla, false));
+        this.tasks.addTask(14, new EntityAITempt(this, 1.0D, items.ModItems.botellaaceite, false));
         this.tasks.addTask(15, new EntityAIFollowParent(this, 0.6D));
         this.tasks.addTask(16, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
@@ -87,7 +87,7 @@ public class EntityRobot extends EntityAnimal
     {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(40.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.3D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.4D);
         
         this.getAttributeMap().registerAttribute(SharedMonsterAttributes.attackDamage);
         this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(4.0D);
@@ -114,8 +114,7 @@ public class EntityRobot extends EntityAnimal
     @Override
     protected String getDeathSound()
     {
-        
-    	playSound(Constants.MODID + ":" + "wilhelm", getSoundVolume(), getSoundPitch());
+    	    	playSound(Constants.MODID + ":" + "wilhelm", getSoundVolume(), getSoundPitch());
     	return null;//etc.
     }
 
@@ -132,7 +131,7 @@ public class EntityRobot extends EntityAnimal
 	
 	public boolean isBreedingItem(ItemStack par1ItemStack)
     {
-        return par1ItemStack != null && par1ItemStack.getItem() == btomod.guindilla;
+        return par1ItemStack != null && par1ItemStack.getItem() == items.ModItems.botellaaceite;
     }
 	
 	
@@ -166,6 +165,7 @@ public boolean attackEntityAsMob(Entity entityTarget)
     {
         if (knockbackModifier  > 0)
         {
+        	
            entityTarget.addVelocity((double)(-MathHelper.sin(rotationYaw * 
 
                  (float)Math.PI / 180.0F) * (float)knockbackModifier  * 0.5F), 
@@ -184,7 +184,6 @@ public boolean attackEntityAsMob(Entity entityTarget)
    entityTarget.setFire(fireModifier * 4);
     }
 
-        // I copied these enchantments from EntityMob, not sure what they do
         if (entityTarget instanceof EntityLivingBase)
         {
             EnchantmentHelper.func_151384_a((EntityLivingBase)entityTarget, this);

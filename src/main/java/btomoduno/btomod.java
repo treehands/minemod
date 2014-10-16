@@ -4,6 +4,7 @@ import java.util.Random;
 import items.ModItems;
 import lib.Constants;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLivingBase;
@@ -26,6 +27,7 @@ import plants.ItemGuindilla;
 import plants.ItemUva;
 import proxy.CommonProxy;
 import blocks.ModBlocks;
+import blocks.minablock;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -65,7 +67,7 @@ public class btomod {
 	public final static Block blockGuindilla = new BlockGuindilla();
 	public final static Item guindilla = new ItemGuindilla();
 	
-	//mobs item eggs
+	//reg mobs and item eggs
 	public static void registerEntity(Class entityClass, String name)
 	{
 	int entityID = EntityRegistry.findGlobalUniqueEntityId();
@@ -78,13 +80,19 @@ public class btomod {
 	EntityRegistry.registerModEntity(entityClass, name, entityID, Constants.MODID, 64, 1, true);
 	EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, primaryColor, secondaryColor));
 	}
-
+	
+	//proxy
+	@SidedProxy(clientSide = Constants.CLIENT_PROXY_CLASS, serverSide = Constants.SERVER_PROXY_CLASS)
+	
+	public static CommonProxy proxy;
+	
+	
+	//PREINIT
 	@Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 		
 			
-		proxy.registerRenderThings();
-     	proxy.registerSounds();
+	   	proxy.registerSounds();
      	proxy.registerRenderers();
      	proxy.registerEntitySpawns();
 
@@ -110,26 +118,28 @@ public class btomod {
    	 ModBlocks.init();
    	 ModItems.init();
    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 3);
- 	    	
+
+   	GameRegistry.registerBlock(blocks.ModBlocks.minablock, "mina");
    	 
+   	 
+   	 proxy.registerTileEntities();
     }
 	   	
-@SidedProxy(clientSide = Constants.CLIENT_PROXY_CLASS, serverSide = Constants.SERVER_PROXY_CLASS)
-	
-public static CommonProxy proxy;
-   
+  
+	//INIT
     @Mod.EventHandler
-    
     public void init(FMLInitializationEvent event) {
     	
     	
     	
-    //Custom drops
+    	
+    	
+    	//Custom drops
     	
     	MinecraftForge.EVENT_BUS.register(new customdrops());
     	
     	  	
-    //RECETAS
+    	//RECETAS
     	    	
     	//saddle
     	
@@ -327,8 +337,17 @@ public static CommonProxy proxy;
     	ItemStack hierro3 = new ItemStack(Items.iron_ingot);
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.robot), " x ", "zyz", " z ",
     	        'x', cerebro, 'y', chip , 'z', hierro3 );
+    	
+    	//pito
+
+    	ItemStack chip3 = new ItemStack(items.ModItems.chip);
+    	ItemStack hierro4 = new ItemStack(Items.iron_ingot);
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.pito), "xxx", "xyx", "xxx",
+    	        'x', hierro4, 'y', chip3 );
     }
     
+    
+	//POSTINIT
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
  
