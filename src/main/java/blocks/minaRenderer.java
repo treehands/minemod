@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class minaRenderer extends TileEntitySpecialRenderer{
 
-	private final static ResourceLocation texture = new ResourceLocation (Constants.MODID + ":" + "/textures/models/mina.png");
+	private final static ResourceLocation texture = new ResourceLocation (Constants.MODID + ":" + "textures/models/mina.png");
 	
 	private Modelmina model;
 	
