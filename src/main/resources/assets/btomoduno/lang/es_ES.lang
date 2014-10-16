@@ -9,6 +9,7 @@ tile.blueberries.name=Planta de Arandanos
 item.blueberry.name=Arandano
 tile.fresal.name=Fresal
 tile.MinaBlock.name=Antena
+tile.MesaBlock.name=Base de antena
 item.fresa.name=Fresa
 tile.vid.name=Vid
 item.uva.name=Uvas

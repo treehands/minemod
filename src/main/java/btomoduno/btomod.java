@@ -120,7 +120,7 @@ public class btomod {
    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 3);
 
    	GameRegistry.registerBlock(blocks.ModBlocks.minablock, "mina");
-   	 
+   	GameRegistry.registerBlock(blocks.ModBlocks.mesablock, "mesa"); 
    	 
    	 proxy.registerTileEntities();
     }

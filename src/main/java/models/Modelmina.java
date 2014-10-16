@@ -22,6 +22,8 @@ public class Modelmina extends ModelBase
     ModelRenderer Shape13;
     ModelRenderer Shape14;
     ModelRenderer Shape16;
+    ModelRenderer Shape17;
+    ModelRenderer Shape18;
   
   public Modelmina()
   {
@@ -83,13 +85,13 @@ public class Modelmina extends ModelBase
       Shape9.mirror = true;
       setRotation(Shape9, 0F, 0F, 0F);
       Shape10 = new ModelRenderer(this, 2, 49);
-      Shape10.addBox(0F, 0F, 0F, 13, 1, 7);
+      Shape10.addBox(0F, 0F, 0F, 1, 1, 7);
       Shape10.setRotationPoint(-6F, 21F, -3F);
       Shape10.setTextureSize(64, 64);
       Shape10.mirror = true;
       setRotation(Shape10, 0F, 0F, 0F);
       Shape11 = new ModelRenderer(this, 2, 49);
-      Shape11.addBox(0F, 0F, 0F, 7, 1, 13);
+      Shape11.addBox(0F, 0F, 0F, 7, 1, 1);
       Shape11.setRotationPoint(-3F, 21F, -6F);
       Shape11.setTextureSize(64, 64);
       Shape11.mirror = true;
@@ -118,6 +120,18 @@ public class Modelmina extends ModelBase
       Shape16.setTextureSize(64, 64);
       Shape16.mirror = true;
       setRotation(Shape16, 0F, 0F, 0F);
+      Shape17 = new ModelRenderer(this, 2, 49);
+      Shape17.addBox(0F, 0F, 0F, 7, 1, 1);
+      Shape17.setRotationPoint(-3F, 21F, 6F);
+      Shape17.setTextureSize(64, 64);
+      Shape17.mirror = true;
+      setRotation(Shape17, 0F, 0F, 0F);
+      Shape18 = new ModelRenderer(this, 2, 49);
+      Shape18.addBox(0F, 0F, 0F, 1, 1, 7);
+      Shape18.setRotationPoint(6F, 21F, -3F);
+      Shape18.setTextureSize(64, 64);
+      Shape18.mirror = true;
+      setRotation(Shape18, 0F, 0F, 0F);
   }
   
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
@@ -139,7 +153,11 @@ public class Modelmina extends ModelBase
     Shape13.render(f5);
     Shape14.render(f5);
     Shape16.render(f5);
+    Shape17.render(f5);
+    Shape18.render(f5);
   }
+
+
 
 	public void renderModel(float f)
 	{
@@ -158,8 +176,11 @@ public class Modelmina extends ModelBase
 		Shape13.render(f);
 		Shape14.render(f);
 		Shape16.render(f);
+		Shape17.render(f);
+		Shape18.render(f);
 	}
 
+  
   private void setRotation(ModelRenderer model, float x, float y, float z)
   {
     model.rotateAngleX = x;
@@ -173,4 +194,3 @@ public class Modelmina extends ModelBase
   }
 
 }
-

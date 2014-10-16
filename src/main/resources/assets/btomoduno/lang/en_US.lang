@@ -12,6 +12,7 @@ item.fresa.name=Strawberry
 tile.vid.name=Grapevine
 item.uva.name=Grapes
 tile.MinaBlock.name=Antenna
+tile.MesaBlock.name=Base Antenna
 tile.cebollas.name=Onions
 item.cebolla.name=Onion
 item.btomoduno_chuleta.name=Raw Mutton
