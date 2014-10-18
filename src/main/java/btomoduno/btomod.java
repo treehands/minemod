@@ -27,6 +27,8 @@ import plants.ItemGuindilla;
 import plants.ItemUva;
 import proxy.CommonProxy;
 import blocks.ModBlocks;
+import blocks.TileEntityDiana;
+import blocks.TileEntitySilla;
 import blocks.minablock;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -121,7 +123,10 @@ public class btomod {
 
    	GameRegistry.registerBlock(blocks.ModBlocks.minablock, "mina");
    	GameRegistry.registerBlock(blocks.ModBlocks.mesablock, "mesa"); 
-   	 
+  	GameRegistry.registerBlock(blocks.ModBlocks.dianablock, "diana");
+  	GameRegistry.registerBlock(blocks.ModBlocks.sillablock, "silla");
+  	GameRegistry.registerTileEntity(TileEntityDiana.class, "dianatile");
+  	GameRegistry.registerTileEntity(TileEntitySilla.class, "sillatile");
    	 proxy.registerTileEntities();
     }
 	   	
@@ -344,6 +349,16 @@ public class btomod {
     	ItemStack hierro4 = new ItemStack(Items.iron_ingot);
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.pito), "xxx", "xyx", "xxx",
     	        'x', hierro4, 'y', chip3 );
+    	
+    	
+    	//diana
+
+    	ItemStack cartel = new ItemStack(Items.sign);
+    	ItemStack papel = new ItemStack(Items.paper);
+    	ItemStack madera2 = new ItemStack(Blocks.wooden_slab);
+    	GameRegistry.addRecipe(new ItemStack(blocks.ModBlocks.dianablock), "zzz", "yyy", " x ",
+    	        'x', cartel, 'y', papel, 'z', madera2 );
+    	
     }
     
     

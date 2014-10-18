@@ -2,10 +2,14 @@ package proxy;
 
 import org.lwjgl.opengl.GL11;
 
+import blocks.TileEntityDiana;
 import blocks.TileEntityMesa;
 import blocks.TileEntityMina;
+import blocks.TileEntitySilla;
+import blocks.dianaRenderer;
 import blocks.mesaRenderer;
 import blocks.minaRenderer;
+import blocks.sillaRenderer;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import cpw.mods.fml.client.registry.ClientRegistry;
@@ -24,10 +28,14 @@ public class ClientProxy extends CommonProxy{
 	RenderingRegistry.registerEntityRenderingHandler(EntityWalker.class, new RenderWalker(new ModelBiped(), 0.5F));
 	RenderingRegistry.registerEntityRenderingHandler(EntityMendas.class, new RenderMendas(new ModelBiped(), 0.5F));
 	RenderingRegistry.registerEntityRenderingHandler(EntityRobot.class, new RenderRobot(new ModelBiped(), 0.2F));
-	TileEntitySpecialRenderer render = new minaRenderer();
-	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMina.class, render);
+	TileEntitySpecialRenderer render3 = new minaRenderer();
+	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMina.class, render3);
 	TileEntitySpecialRenderer render2 = new mesaRenderer();
 	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMesa.class, render2);
+	TileEntitySpecialRenderer render = new dianaRenderer();
+	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDiana.class, render);
+	TileEntitySpecialRenderer render4 = new sillaRenderer();
+	ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySilla.class, render4);
 	}
 	
 	public void registerTileEntitySpecialRenderer() {

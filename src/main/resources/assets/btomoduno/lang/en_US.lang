@@ -43,3 +43,5 @@ item.btomoduno_botellaaceite.name=Oil
 entity.entityWalker.name=Dead Walker
 entity.entityRobot.name=Guard Bot
 entity.entityMendas.name=Wilson
+tile.DianaBlock.name=Target
+tile.SillaBlock.name=Chair

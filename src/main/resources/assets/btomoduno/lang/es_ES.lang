@@ -43,3 +43,5 @@ item.btomoduno_botellaaceite.name=Aceite
 entity.entityWalker.name=Muerto andante
 entity.entityRobot.name=Robot guardian
 entity.entityMendas.name=Wilson
+tile.DianaBlock.name=Diana
+tile.SillaBlock.name=Silla
