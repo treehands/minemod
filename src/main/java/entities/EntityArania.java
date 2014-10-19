@@ -36,7 +36,7 @@ import net.minecraft.world.World;
 import lib.Constants;
 import btomoduno.btomod;
 
-public class EntityTest extends EntityHorse
+public class EntityArania extends EntityHorse
 {
 	 // fields related to attacking
 	protected Entity entityAttacked = null;
@@ -44,7 +44,7 @@ public class EntityTest extends EntityHorse
 	protected int knockback = 0;
 	protected boolean wasDamageDone = false;
 	
-		public EntityTest(World par1World)
+		public EntityArania(World par1World)
     {
         super(par1World);
         this.setSize(1.5F, 1.5F);
@@ -60,11 +60,6 @@ public class EntityTest extends EntityHorse
         this.tasks.addTask(9, new EntityAIWander(this, 0.6D));
         this.tasks.addTask(10, new EntityAIWatchClosest(this, EntityLivingBase.class, 8.0F));
         this.tasks.addTask(11, new EntityAIAttackOnCollide(this, EntityMob.class, 1.0D, true));
-        //this.tasks.addTask(11, new EntityAIAttackOnCollide(this, EntitySkeleton.class, 1.0D, true));
-       // this.tasks.addTask(11, new EntityAIAttackOnCollide(this, EntityEnderman.class, 1.0D, true));
-        //this.tasks.addTask(11, new EntityAIAttackOnCollide(this, EntitySpider.class, 1.0D, true));
-        //this.tasks.addTask(11, new EntityAIAttackOnCollide(this, EntityWalker.class, 1.0D, true));
-       // this.tasks.addTask(11, new EntityAIAttackOnCollide(this, EntityCreeper.class, 1.0D, true));
         this.tasks.addTask(12, new EntityAIPanic(this, 1.4D));
         this.tasks.addTask(13, new EntityAIMate(this, 1.0D));
         this.tasks.addTask(14, new EntityAITempt(this, 1.0D, items.ModItems.botellaaceite, false));
@@ -130,7 +125,7 @@ public class EntityTest extends EntityHorse
 
 	@Override
 	public EntityHorse createChild(EntityAgeable var1) {
-		return new EntityTest(this.worldObj);
+		return new EntityArania(this.worldObj);
 	}
 	
 	public boolean isBreedingItem(ItemStack par1ItemStack)

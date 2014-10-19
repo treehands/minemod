@@ -17,18 +17,18 @@ import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import entities.EntityRobot;
 import entities.EntityMendas;
-import entities.EntityTest;
+import entities.EntityArania;
 import entities.EntityWalker;
 import entities.RenderRobot;
 import entities.RenderMendas;
-import entities.RenderTest;
+import entities.RenderArania;
 import entities.RenderWalker;
 
 public class ClientProxy extends CommonProxy{
 	
 	@Override
 	public void registerRenderers() {
-	RenderingRegistry.registerEntityRenderingHandler(EntityTest.class, new RenderTest(new ModelSpider(), 0.5F));
+	RenderingRegistry.registerEntityRenderingHandler(EntityArania.class, new RenderArania(new ModelSpider(), 0.5F));
 	RenderingRegistry.registerEntityRenderingHandler(EntityWalker.class, new RenderWalker(new ModelBiped(), 0.5F));
 	RenderingRegistry.registerEntityRenderingHandler(EntityMendas.class, new RenderMendas(new ModelBiped(), 0.5F));
 	RenderingRegistry.registerEntityRenderingHandler(EntityRobot.class, new RenderRobot(new ModelBiped(), 0.2F));

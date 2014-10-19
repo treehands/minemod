@@ -14,10 +14,10 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderTest extends RenderHorse {
+public class RenderArania extends RenderHorse {
 
 	private static final ResourceLocation textureLocation = new ResourceLocation(Constants.MODID + ":" + "textures/models/arania.png");
-public RenderTest(ModelSpider model, float shadowSize) {
+public RenderArania(ModelSpider model, float shadowSize) {
 super(model, shadowSize);
 }
 
@@ -28,9 +28,9 @@ return textureLocation;
 }
 protected void preRenderCallback(EntityLivingBase par1EntityLivingBase, float par2)
 {
-    this.scaleSpider((EntityTest)par1EntityLivingBase, par2);
+    this.scaleSpider((EntityArania)par1EntityLivingBase, par2);
 }
-protected void scaleSpider(EntityTest par1EntityTest, float par2)
+protected void scaleSpider(EntityArania par1EntityTest, float par2)
 {
     GL11.glScalef(1.5F, 1.5F, 1.5F);
 }

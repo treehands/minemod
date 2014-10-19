@@ -3,7 +3,7 @@ package items;
 import btomoduno.btomod;
 import lib.Constants;
 import cpw.mods.fml.common.registry.GameRegistry;
-import entities.EntityTest;
+import entities.EntityArania;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.passive.*;
@@ -25,7 +25,7 @@ public boolean onItemUse(ItemStack item, EntityPlayer player, World world, int x
 {
 	if (!world.isRemote)
 	{
-			EntityTest ent = new EntityTest(world);
+			EntityArania ent = new EntityArania(world);
 			ent.setLocationAndAngles(x, y + 1, z, MathHelper.wrapAngleTo180_float(world.rand.nextFloat() * 360.0F), 0.0F);
 			world.spawnEntityInWorld(ent);
 			

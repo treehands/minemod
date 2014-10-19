@@ -39,7 +39,7 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import entities.EntityRobot;
-import entities.EntityTest;
+import entities.EntityArania;
 import entities.EntityWalker;
 import entities.EntityMendas;
  
@@ -99,7 +99,7 @@ public class btomod {
      	proxy.registerRenderers();
      	proxy.registerEntitySpawns();
      	
-     registerEntity(EntityTest.class, "entityTest");
+     registerEntity(EntityArania.class, "entityTest");
      registerEntity(EntityRobot.class, "entityRobot");
      registerEntity(EntityMendas.class, "entityMendas");
      registerEntity(EntityWalker.class, "entityWalker");
