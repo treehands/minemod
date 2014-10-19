@@ -39,6 +39,7 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import entities.EntityRobot;
+import entities.EntityTest;
 import entities.EntityWalker;
 import entities.EntityMendas;
  
@@ -97,7 +98,8 @@ public class btomod {
 	   	proxy.registerSounds();
      	proxy.registerRenderers();
      	proxy.registerEntitySpawns();
-
+     	
+     registerEntity(EntityTest.class, "entityTest");
      registerEntity(EntityRobot.class, "entityRobot");
      registerEntity(EntityMendas.class, "entityMendas");
      registerEntity(EntityWalker.class, "entityWalker");
@@ -358,6 +360,16 @@ public class btomod {
     	ItemStack madera2 = new ItemStack(Blocks.wooden_slab);
     	GameRegistry.addRecipe(new ItemStack(blocks.ModBlocks.dianablock), "zzz", "yyy", " x ",
     	        'x', cartel, 'y', papel, 'z', madera2 );
+    	
+    	//llave
+
+    	ItemStack cerebro2 = new ItemStack(items.ModItems.cerebro);
+    	ItemStack huevo = new ItemStack(items.ModItems.huevizador);
+    	ItemStack chip4 = new ItemStack(items.ModItems.chip);
+    	ItemStack lingote3 = new ItemStack(items.ModItems.lingote);
+    	
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.llave), "oxo", "oyo", "ozo",
+    	        'x', cerebro2, 'y', huevo, 'z', chip4, 'o', lingote3 );
     	
     }
     

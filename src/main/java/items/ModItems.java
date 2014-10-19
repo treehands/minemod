@@ -32,8 +32,10 @@ public final class ModItems {
 	public static Item robot;
 	public static Item cerebro;
 	public static Item pito;
+	public static Item llave;
 	
 	public static void init() {
+		llave = new llave();
 		pito = new pito();
 		cerebro = new cerebro();
 		chip = new chip();
