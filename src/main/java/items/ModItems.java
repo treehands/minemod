@@ -34,8 +34,10 @@ public final class ModItems {
 	public static Item pito;
 	public static Item llave;
 	public static Item briqueta;
+	public static Item varita;
 	
 	public static void init() {
+		varita = new varita();
 		briqueta = new briqueta();
 		llave = new llave();
 		pito = new pito();

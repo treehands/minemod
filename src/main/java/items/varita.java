@@ -10,9 +10,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class mochila extends Item {
-	private String name = "mochila";
-	public mochila() {
+public class varita extends Item {
+	private String name = "varita";
+	public varita() {
 	setUnlocalizedName(Constants.MODID + "_" + name);
 	GameRegistry.registerItem(this, name);
 	setTextureName(Constants.MODID + ":" + name);

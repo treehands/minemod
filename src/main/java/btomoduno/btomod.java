@@ -387,6 +387,14 @@ public class btomod {
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.briqueta), "xxx", "xyx", "xxx",
     	        'x', madera3, 'y', aceitillo);
     	
+    	//briqueta
+
+    	ItemStack palo = new ItemStack(Items.stick);
+    	ItemStack pepita = new ItemStack(Items.gold_nugget);
+   	
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.varita), "y  ", " x ", "  x",
+    	        'x', palo, 'y', pepita);
+    	
     }
     
     
