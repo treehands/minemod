@@ -7,6 +7,8 @@ import lib.Constants;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -17,7 +19,8 @@ public class CommonProxy {
 	public void registerSounds() {}
     public void registerTileEntities() {}
 	public void registerRenderers() {}
-	public void registerEntitySpawns()
+	
+		public void registerEntitySpawns()
     {
         // register natural spawns for entities
         // EntityRegistry.addSpawn(MyEntity.class, spawnProbability, minSpawn, maxSpawn, enumCreatureType, [spawnBiome]);
@@ -47,5 +50,6 @@ public class CommonProxy {
         EntityRegistry.addSpawn(EntityWalker.class, 12, 3, 8, EnumCreatureType.creature, BiomeGenBase.river);
         EntityRegistry.addSpawn(EntityWalker.class, 12, 3, 8, EnumCreatureType.creature, BiomeGenBase.birchForest);
         EntityRegistry.addSpawn(EntityWalker.class, 12, 3, 8, EnumCreatureType.creature, BiomeGenBase.swampland);
-   }         
+   }    
 }
+

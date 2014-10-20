@@ -15,6 +15,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.OreDictionary;
 import plants.BlockBlueberry;
 import plants.BlockCebolla;
 import plants.BlockFresa;
@@ -27,7 +28,9 @@ import plants.ItemGuindilla;
 import plants.ItemUva;
 import proxy.CommonProxy;
 import blocks.ModBlocks;
+import blocks.TileBlocks;
 import blocks.TileEntityDiana;
+import blocks.TileEntityMina;
 import blocks.TileEntitySilla;
 import blocks.minablock;
 import cpw.mods.fml.common.Mod;
@@ -121,6 +124,7 @@ public class btomod {
    	 MinecraftForge.addGrassSeed(new ItemStack(cebolla), 1);
    	 ModBlocks.init();
    	 ModItems.init();
+   	 TileBlocks.init();
    	 MinecraftForge.addGrassSeed(new ItemStack(items.ModItems.semilla), 3);
 
    	GameRegistry.registerBlock(blocks.ModBlocks.minablock, "mina");
@@ -129,7 +133,11 @@ public class btomod {
   	GameRegistry.registerBlock(blocks.ModBlocks.sillablock, "silla");
   	GameRegistry.registerTileEntity(TileEntityDiana.class, "dianatile");
   	GameRegistry.registerTileEntity(TileEntitySilla.class, "sillatile");
+  	GameRegistry.registerTileEntity(TileEntityMina.class, "minatile");
    	 proxy.registerTileEntities();
+   	 
+   	 //fuel
+   	GameRegistry.registerFuelHandler(new FuelHandler());
     }
 	   	
   
@@ -137,8 +145,7 @@ public class btomod {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
     	
-    	
-    	
+ 	
     	
     	
     	//Custom drops
@@ -370,6 +377,15 @@ public class btomod {
     	
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.llave), "oxo", "oyo", "ozo",
     	        'x', cerebro2, 'y', huevo, 'z', chip4, 'o', lingote3 );
+    	
+    	
+    	//briqueta
+
+    	ItemStack madera3 = new ItemStack(Blocks.planks, 1, OreDictionary.WILDCARD_VALUE);
+    	ItemStack aceitillo = new ItemStack(items.ModItems.botellaaceite);
+   	
+    	GameRegistry.addRecipe(new ItemStack(items.ModItems.briqueta), "xxx", "xyx", "xxx",
+    	        'x', madera3, 'y', aceitillo);
     	
     }
     

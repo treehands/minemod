@@ -3,7 +3,6 @@ import java.util.List;
 
 import lib.Constants;
 import btomoduno.btomod;
-import entities.EntityRobot;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -29,9 +28,9 @@ if (!world.isRemote)
 {
 for (final Object obj : world.loadedEntityList)
 {
-if (obj instanceof entities.EntityRobot)
+if (obj instanceof entities.EntityArania)
 {
-final entities.EntityRobot child = (entities.EntityRobot) obj;
+final entities.EntityArania child = (entities.EntityArania) obj;
 {
 child.setLocationAndAngles(player.posX, player.posY, player.posZ, player.rotationYaw, player.rotationPitch);
 if (child.isRiding())
