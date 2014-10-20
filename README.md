@@ -1,4 +1,4 @@
-bTo Chili Hunter (beta v0.6.0)
+bTo Chili Hunter (beta v0.6.1)
 =======
 
  * Craftable Mount: Mechanic Spider.
