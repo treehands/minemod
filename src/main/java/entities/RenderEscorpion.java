@@ -15,10 +15,10 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderArania extends RenderHorse {
+public class RenderEscorpion extends RenderHorse {
 
-	private static final ResourceLocation textureLocation = new ResourceLocation(Constants.MODID + ":" + "textures/models/arania.png");
-public RenderArania(ModelSpider model, float shadowSize) {
+	private static final ResourceLocation textureLocation = new ResourceLocation(Constants.MODID + ":" + "textures/models/escorpion.png");
+public RenderEscorpion(Modelescorpion model, float shadowSize) {
 super(model, shadowSize);
 }
 
@@ -29,9 +29,9 @@ return textureLocation;
 }
 protected void preRenderCallback(EntityLivingBase par1EntityLivingBase, float par2)
 {
-    this.scaleSpider((EntityArania)par1EntityLivingBase, par2);
+    this.scaleSpider((EntityEscorpion)par1EntityLivingBase, par2);
 }
-protected void scaleSpider(EntityArania par1EntityTest, float par2)
+protected void scaleSpider(EntityEscorpion par1EntityTest, float par2)
 {
     GL11.glScalef(1.5F, 1.5F, 1.5F);
 }

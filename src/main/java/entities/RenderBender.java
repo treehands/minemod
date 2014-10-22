@@ -15,10 +15,10 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderArania extends RenderHorse {
+public class RenderBender extends RenderHorse {
 
 	private static final ResourceLocation textureLocation = new ResourceLocation(Constants.MODID + ":" + "textures/models/arania.png");
-public RenderArania(ModelSpider model, float shadowSize) {
+public RenderBender(ModelSpider model, float shadowSize) {
 super(model, shadowSize);
 }
 

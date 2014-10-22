@@ -37,7 +37,7 @@ import net.minecraft.world.World;
 import lib.Constants;
 import btomoduno.btomod;
 
-public class EntityArania extends EntityHorse
+public class EntityCerdo extends EntityHorse
 {
 	 // fields related to attacking
 	protected Entity entityAttacked = null;
@@ -45,7 +45,7 @@ public class EntityArania extends EntityHorse
 	protected int knockback = 0;
 	protected boolean wasDamageDone = false;
 	
-		public EntityArania(World par1World)
+		public EntityCerdo(World par1World)
     {
         super(par1World);
         this.setSize(1.5F, 1.5F);
@@ -100,36 +100,36 @@ public class EntityArania extends EntityHorse
     @Override
     protected String getLivingSound()
     {
-    	return "mob.spider.say";
+    	return "mob.pig.say";
     }
 
     @Override
     protected String getHurtSound()
     {
-    	return "mob.spider.say";
+    	return "mob.pig.say";
     }
 
     @Override
     protected String getDeathSound()
     {
-    	return "mob.spider.death";
-    }
-
-    @Override
-    protected float getSoundVolume()
-    {
-        return 0.6F;
+    	return "mob.pig.death";
     }
     
     @Override
     protected void func_145780_a(int p_145780_1_, int p_145780_2_, int p_145780_3_, Block p_145780_4_)
     {
-        this.playSound("mob.spider.step", 0.15F, 1.0F);
+        this.playSound("mob.pig.step", 0.15F, 1.0F);
+    }
+    
+    @Override
+    protected float getSoundVolume()
+    {
+        return 0.6F;
     }
 
 	@Override
 	public EntityHorse createChild(EntityAgeable var1) {
-		return new EntityArania(this.worldObj);
+		return new EntityCerdo(this.worldObj);
 	}
 	
 	public boolean isBreedingItem(ItemStack par1ItemStack)

@@ -30,6 +30,7 @@ import proxy.CommonProxy;
 import blocks.ModBlocks;
 import blocks.TileBlocks;
 import blocks.TileEntityDiana;
+import blocks.TileEntityMesilla;
 import blocks.TileEntityMina;
 import blocks.TileEntitySilla;
 import blocks.minablock;
@@ -41,6 +42,8 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import entities.EntityCerdo;
+import entities.EntityEscorpion;
 import entities.EntityRobot;
 import entities.EntityArania;
 import entities.EntityWalker;
@@ -101,8 +104,11 @@ public class btomod {
 	   	proxy.registerSounds();
      	proxy.registerRenderers();
      	proxy.registerEntitySpawns();
+     
      	
-     registerEntity(EntityArania.class, "entityTest");
+     registerEntity(EntityCerdo.class, "entityCerdo");	
+     registerEntity(EntityEscorpion.class, "entityEscorpion");	
+     registerEntity(EntityArania.class, "entityArania");
      registerEntity(EntityRobot.class, "entityRobot");
      registerEntity(EntityMendas.class, "entityMendas");
      registerEntity(EntityWalker.class, "entityWalker");
@@ -131,8 +137,10 @@ public class btomod {
    	GameRegistry.registerBlock(blocks.ModBlocks.mesablock, "mesa"); 
   	GameRegistry.registerBlock(blocks.ModBlocks.dianablock, "diana");
   	GameRegistry.registerBlock(blocks.ModBlocks.sillablock, "silla");
+  	GameRegistry.registerBlock(blocks.ModBlocks.mesillablock, "mesilla");
   	GameRegistry.registerTileEntity(TileEntityDiana.class, "dianatile");
   	GameRegistry.registerTileEntity(TileEntitySilla.class, "sillatile");
+  	GameRegistry.registerTileEntity(TileEntityMesilla.class, "mesillatile");
   	GameRegistry.registerTileEntity(TileEntityMina.class, "minatile");
    	 proxy.registerTileEntities();
    	 
@@ -394,6 +402,40 @@ public class btomod {
    	
     	GameRegistry.addRecipe(new ItemStack(items.ModItems.varita), "y  ", " x ", "  x",
     	        'x', palo, 'y', pepita);
+    	
+    	
+    	//llave2
+    	
+    	ItemStack llave = new ItemStack(items.ModItems.llave);
+    	ItemStack polvoveneno2 = new ItemStack(items.ModItems.polvoveneno);
+    	ItemStack llave2 = new ItemStack(items.ModItems.llave2);
+    	
+    	GameRegistry.addShapelessRecipe(llave2,llave,polvoveneno);
+    	
+    	//llave3
+    	
+    	ItemStack llaven = new ItemStack(items.ModItems.llave);
+    	ItemStack carnecerdo2 = new ItemStack(Items.porkchop);
+    	ItemStack llave3 = new ItemStack(items.ModItems.llave3);
+    	
+    	GameRegistry.addShapelessRecipe(llave3,llaven,carnecerdo2);
+ 
+    	
+    	//pito2
+    	
+    	ItemStack pito = new ItemStack(items.ModItems.pito);
+    	ItemStack polvoveneno3 = new ItemStack(items.ModItems.polvoveneno);
+    	ItemStack pito2 = new ItemStack(items.ModItems.pito2);
+    	
+    	GameRegistry.addShapelessRecipe(pito2,pito,polvoveneno);
+    	
+    	//pito3
+    	
+    	ItemStack piton = new ItemStack(items.ModItems.pito);
+    	ItemStack carnecerdo3 = new ItemStack(Items.porkchop);
+    	ItemStack pito3 = new ItemStack(items.ModItems.pito3);
+    	
+    	GameRegistry.addShapelessRecipe(pito3,piton,carnecerdo3);
     	
     }
     

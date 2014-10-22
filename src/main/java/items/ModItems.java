@@ -32,7 +32,11 @@ public final class ModItems {
 	public static Item robot;
 	public static Item cerebro;
 	public static Item pito;
+	public static Item pito2;
+	public static Item pito3;
 	public static Item llave;
+	public static Item llave2;
+	public static Item llave3;
 	public static Item briqueta;
 	public static Item varita;
 	
@@ -40,7 +44,11 @@ public final class ModItems {
 		varita = new varita();
 		briqueta = new briqueta();
 		llave = new llave();
+		llave2 = new llave2();
+		llave3 = new llave3();
 		pito = new pito();
+		pito2 = new pito2();
+		pito3 = new pito3();
 		cerebro = new cerebro();
 		chip = new chip();
 		robot = new robot();
