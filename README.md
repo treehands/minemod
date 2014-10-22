@@ -2,6 +2,8 @@ bTo Chili Hunter (beta v0.6.1)
 =======
 
  * Craftable Mount: Mechanic Spider.
+ * Craftable Mount: Mechanic Scorpid.
+ * Craftable Mount: Mechanic Pig.
  * Craftable Guardian Bot.
  * Add and Spawn Dead Walkers Hordes.
  * Add and Spawn Zephirite ore.
