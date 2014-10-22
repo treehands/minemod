@@ -1,4 +1,4 @@
-bTo Chili Hunter (beta v0.6.1)
+[bTo Chili Hunter (beta v0.6.2)][1]
 =======
 
  * Craftable Mount: Mechanic Spider.
@@ -21,3 +21,5 @@ Minecraft version 1.7.x. with Forge.
 
 W.I.P.
 ------
+
+  [1]: https://github.com/treehands/minemod/releases/download/v0.6.2/bTo.Chili.Hunter.v0.6.2.jar
